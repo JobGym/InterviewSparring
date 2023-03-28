@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
+		2A0DE1C429D8A13C00E931B4 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */; };
+		2A0DE1C529D8A13C00E931B4 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */; };
+		2A0DE1C629D8A13C00E931B4 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */; };
+		2A0DE1C729D8A13C00E931B4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C029D8A13C00E931B4 /* OFL.txt */; };
+		2A0DE1C829D8A13C00E931B4 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */; };
+		2A0DE1C929D8A13C00E931B4 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */; };
+		2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */; };
+		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
+		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
 		F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
 		F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8929D2EF04006F5688 /* ContentView.swift */; };
 		F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8B29D2EF05006F5688 /* Assets.xcassets */; };
@@ -17,6 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		2A0DE1C029D8A13C00E931B4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
+		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSparringApp.swift; sourceTree = "<group>"; };
 		F9B91C8929D2EF04006F5688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +59,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0DE1BC29D8A13C00E931B4 /* Noto_Sans_KR */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */,
+				2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */,
+				2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */,
+				2A0DE1C029D8A13C00E931B4 /* OFL.txt */,
+				2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */,
+				2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */,
+				2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */,
+			);
+			path = Noto_Sans_KR;
+			sourceTree = "<group>";
+		};
+		2A0DE1CB29D8A14700E931B4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DE1BC29D8A13C00E931B4 /* Noto_Sans_KR */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */,
+				2AC9213429DAA932005B39FD /* QuestionList.swift */,
+			);
+			path = ExpectedQuestion;
+			sourceTree = "<group>";
+		};
 		F9B91C7B29D2EF04006F5688 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +109,11 @@
 		F9B91C8629D2EF04006F5688 /* InterviewSparring */ = {
 			isa = PBXGroup;
 			children = (
+				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
+				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
+				2A0DE1CB29D8A14700E931B4 /* Font */,
 				F9B91C8B29D2EF05006F5688 /* Assets.xcassets */,
 				F9B91C9029D2EF05006F5688 /* Persistence.swift */,
 				F9B91C9529D2EF05006F5688 /* InterviewSparring.entitlements */,
@@ -141,8 +195,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0DE1C729D8A13C00E931B4 /* OFL.txt in Resources */,
+				2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */,
+				2A0DE1C429D8A13C00E931B4 /* NotoSansKR-Light.otf in Resources */,
 				F9B91C8F29D2EF05006F5688 /* Preview Assets.xcassets in Resources */,
+				2A0DE1C529D8A13C00E931B4 /* NotoSansKR-Bold.otf in Resources */,
+				2A0DE1C929D8A13C00E931B4 /* NotoSansKR-Medium.otf in Resources */,
 				F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */,
+				2A0DE1C829D8A13C00E931B4 /* NotoSansKR-Black.otf in Resources */,
+				2A0DE1C629D8A13C00E931B4 /* NotoSansKR-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,9 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
+				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
 				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
+				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
 				F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */,
+				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +350,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewSparring/Preview Content\"";
-				DEVELOPMENT_TEAM = L3A22T43UF;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
