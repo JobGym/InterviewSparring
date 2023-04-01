@@ -17,6 +17,7 @@
 		2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
+		F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */; };
 		F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
 		F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8929D2EF04006F5688 /* ContentView.swift */; };
 		F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8B29D2EF05006F5688 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
+		F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSparringApp.swift; sourceTree = "<group>"; };
 		F9B91C8929D2EF04006F5688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
+				F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */,
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
 				2A0DE1CB29D8A14700E931B4 /* Font */,
@@ -216,6 +219,7 @@
 			files = (
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
+				F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
 				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
 				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
