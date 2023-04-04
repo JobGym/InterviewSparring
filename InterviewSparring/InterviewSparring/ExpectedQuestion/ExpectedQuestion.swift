@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CircleStyle: ButtonStyle {
     @Binding var isPressed : Bool
-    
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         Circle()
             .fill(Color.primaryBlue)
@@ -36,6 +35,7 @@ struct RecordStyle: ButtonStyle {
 }
 
 struct ExpectedQuestion: View {
+
     @State var isPressed = false
     
     var body: some View {
