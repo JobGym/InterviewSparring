@@ -37,8 +37,6 @@ struct CircleStyle: ButtonStyle {
         }
     }
 }
-
-/*
 struct RecordStyle: ButtonStyle {
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         ZStack {
@@ -53,8 +51,6 @@ struct RecordStyle: ButtonStyle {
         }
     }
 }
- */
-
 struct ExpectedQuestion: View {
     @State var isPressed = false
     
