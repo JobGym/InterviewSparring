@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
-		2A0DE1C429D8A13C00E931B4 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */; };
-		2A0DE1C529D8A13C00E931B4 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */; };
-		2A0DE1C629D8A13C00E931B4 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */; };
-		2A0DE1C729D8A13C00E931B4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C029D8A13C00E931B4 /* OFL.txt */; };
-		2A0DE1C829D8A13C00E931B4 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */; };
-		2A0DE1C929D8A13C00E931B4 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */; };
-		2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
 		F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
@@ -28,17 +21,14 @@
 		F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */; };
 		F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */; };
 		F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */; };
+		F9ED3CFF29DC7406008B1473 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */; };
+		F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0029DC748C008B1473 /* StartView.swift */; };
+		F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */; };
+		F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
-		2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
-		2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		2A0DE1C029D8A13C00E931B4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
-		2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
-		2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +43,10 @@
 		F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerStyle.swift; sourceTree = "<group>"; };
 		F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
+		F9ED3D0029DC748C008B1473 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,24 +61,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A0DE1BC29D8A13C00E931B4 /* Noto_Sans_KR */ = {
-			isa = PBXGroup;
-			children = (
-				2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */,
-				2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */,
-				2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */,
-				2A0DE1C029D8A13C00E931B4 /* OFL.txt */,
-				2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */,
-				2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */,
-				2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */,
-			);
-			path = Noto_Sans_KR;
-			sourceTree = "<group>";
-		};
 		2A0DE1CB29D8A14700E931B4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				2A0DE1BC29D8A13C00E931B4 /* Noto_Sans_KR */,
+				F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -121,6 +101,7 @@
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
+				F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */,
 				2A0DE1CB29D8A14700E931B4 /* Font */,
 				F9B91C8B29D2EF05006F5688 /* Assets.xcassets */,
 				F9B91C9029D2EF05006F5688 /* Persistence.swift */,
@@ -131,6 +112,8 @@
 				F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */,
 				F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */,
 				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
+				F9ED3D0029DC748C008B1473 /* StartView.swift */,
+				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
 			);
 			path = InterviewSparring;
 			sourceTree = "<group>";
@@ -207,15 +190,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0DE1C729D8A13C00E931B4 /* OFL.txt in Resources */,
-				2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */,
-				2A0DE1C429D8A13C00E931B4 /* NotoSansKR-Light.otf in Resources */,
 				F9B91C8F29D2EF05006F5688 /* Preview Assets.xcassets in Resources */,
-				2A0DE1C529D8A13C00E931B4 /* NotoSansKR-Bold.otf in Resources */,
-				2A0DE1C929D8A13C00E931B4 /* NotoSansKR-Medium.otf in Resources */,
 				F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */,
-				2A0DE1C829D8A13C00E931B4 /* NotoSansKR-Black.otf in Resources */,
-				2A0DE1C629D8A13C00E931B4 /* NotoSansKR-Thin.otf in Resources */,
+				F9ED3CFF29DC7406008B1473 /* Noto_Sans_KR in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,13 +206,16 @@
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
+				F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */,
 				F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
 				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
 				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
 				F9ED3CC429DC6590008B1473 /* WriteEducationView.swift in Sources */,
 				F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */,
+				F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */,
 				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
+				F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */,
 				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,72 @@
+//
+//  StartView.swift
+//  InterviewSparring
+//
+//  Created by 전지민 on 2023/04/05.
+//
+
+import SwiftUI
+
+struct StartView: View {
+    var body: some View {
+        if #available(macOS 13.0, *) {
+            NavigationSplitView(columnVisibility: .constant(.detailOnly)) {
+                Text("취돋우복싱")
+            } detail: {
+                VStack(spacing: 0) {
+                    LinearGradient(colors: [.mainGradientBottom, .mainGradientTop], startPoint: .bottom, endPoint: .top)
+                        .mask {
+                            Text("취도우복싱")
+                                .font(Font.Job.largeTitle)
+                        }
+                        .frame(height: 70)
+                    Text("AI가 추천해주는 예상 질문을 통해 면접을 미리 연습해 보세요!")
+                        .font(Font.Job.headline1)
+                        .foregroundColor(.primaryBlue)
+                    
+                    NavigationLink {
+                        WriteEducationView()
+                    } label: {
+                        Text("면접 시작하기")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    .padding(.top, 56)
+                }
+            }
+            .frame(minWidth: 1240, minHeight: 776)
+            .background(Color.blueBackground)
+        } else {
+            // Fallback on earlier versions
+            NavigationView {
+                VStack {
+                    LinearGradient(colors: [.mainGradientBottom, .mainGradientTop], startPoint: .bottom, endPoint: .top)
+                        .mask {
+                            Text("취도우복싱")
+                                .font(Font.Job.largeTitle)
+                        }
+                        .frame(height: 70)
+                    Text("AI가 추천해주는 예상 질문을 통해 면접을 미리 연습해 보세요!")
+                        .font(Font.Job.headline1)
+                        .foregroundColor(.primaryBlue)
+                    
+                    NavigationLink {
+                        WriteEducationView()
+                    } label: {
+                        Text("면접 시작하기")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    .padding(.top, 56)
+                }
+            }
+            .frame(minWidth: 1240, minHeight: 776)
+            .background(Color.blueBackground)
+        }
+        
+    }
+}
+
+struct StartView_Previews: PreviewProvider {
+    static var previews: some View {
+        StartView()
+    }
+}
