@@ -25,6 +25,7 @@
 		F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C9029D2EF05006F5688 /* Persistence.swift */; };
 		F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C9229D2EF05006F5688 /* InterviewSparring.xcdatamodeld */; };
 		F9B91C9D29D2EF5B006F5688 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = F9B91C9C29D2EF5B006F5688 /* OpenAISwift */; };
+		F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F9B91C9029D2EF05006F5688 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F9B91C9329D2EF05006F5688 /* InterviewSparring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InterviewSparring.xcdatamodel; sourceTree = "<group>"; };
 		F9B91C9529D2EF05006F5688 /* InterviewSparring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterviewSparring.entitlements; sourceTree = "<group>"; };
+		F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
 				F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */,
+				F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */,
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
 				2A0DE1CB29D8A14700E931B4 /* Font */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
 				F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */,
