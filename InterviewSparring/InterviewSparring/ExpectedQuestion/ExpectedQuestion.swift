@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct CircleStyle: ButtonStyle {
+    @Binding var isPressed : Bool
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         Circle()
             .fill(Color.primaryBlue)
             .overlay(
-                Image("microphone")
+                Image(isPressed ? "stop" :"microphone")
             )
             .frame(width: 160, height: 160)
     }
@@ -34,20 +35,20 @@ struct RecordStyle: ButtonStyle {
 }
 
 struct ExpectedQuestion: View {
+
+    @State var isPressed = false
+    
     var body: some View {
         
         VStack (alignment: .center){
             QuestionList()
     
             Button(action : {
-                Rectangle()
-                    .cornerRadius(20)
-                    .frame(width: 20)
-                    .foregroundColor(Color.black)
+                isPressed.toggle()
             }){
                 
             }
-            .buttonStyle(CircleStyle())
+            .buttonStyle(CircleStyle(isPressed: $isPressed))
             .frame(width: 160, height: 160)
             .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
             
