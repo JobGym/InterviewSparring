@@ -8,111 +8,142 @@
 import SwiftUI
 
 struct WriteEducationView: View {
-    let options = [
-        DropdownOption(key: "highschool", val: "고등학교"),
-        DropdownOption(key: "college", val: "전문대학"),
-        DropdownOption(key: "university", val: "대학교"),
-        DropdownOption(key: "master", val: "대학원(석사)"),
-        DropdownOption(key: "Doctor", val: "대학원(박사)"),
+    let educationTypes = [
+        DropdownOption(key: "고등학교", val: "고등학교"),
+        DropdownOption(key: "전문대학", val: "전문대학"),
+        DropdownOption(key: "대학교", val: "대학교"),
+        DropdownOption(key: "대학원(석사)", val: "대학원(석사)"),
+        DropdownOption(key: "대학원(박사)", val: "대학원(박사)"),
+    ]
+    let locations = [
+        DropdownOption(key: "Seoul", val: "서울"),
+        DropdownOption(key: "Gyeonggi", val: "경기"),
+        DropdownOption(key: "Incheon", val: "인천"),
+        DropdownOption(key: "Gangwon", val: "강원"),
+        DropdownOption(key: "Chungbuk", val: "충북"),
+        DropdownOption(key: "Chungnam", val: "충남"),
+        DropdownOption(key: "Daejeon", val: "대전"),
+        DropdownOption(key: "Sejong", val: "세종"),
+        DropdownOption(key: "busan", val: "부산"),
+        DropdownOption(key: "Ulsan", val: "울산"),
+        DropdownOption(key: "Daegu", val: "대구"),
+        DropdownOption(key: "Gyeongbuk", val: "경북"),
+        DropdownOption(key: "Gyeongnam", val: "경남"),
+        DropdownOption(key: "Jeonbuk", val: "전북"),
+        DropdownOption(key: "Jeonnam", val: "전남"),
+        DropdownOption(key: "Gwangju", val: "광주"),
+        DropdownOption(key: "Jeju", val: "제주"),
+        DropdownOption(key: "Overseas", val: "해외")
     ]
     
-    let onSelect = { key in
-        print(key)
-    }
-    
-    @State var displayText = ""
-    @State var department = ""
-    @State var subDepartment = ""
-    @State var enDate = Date()
+    @State var educationHistory = EducationHistory(educationType: "", location: "", name: "", major: "", minor: "", enterDate: Date(), graduateDate: Date())
     
     var body: some View {
         VStack(spacing: 140) {
             VStack(alignment: .leading, spacing: 0) {
                 Text("이력서 제출")
-                    .font(.system(size: 32, weight: .black))
+                    .font(Font.Job.title1)
                 Text("학력사항(최종)")
-                    .font(.system(size: 20, weight: .medium))
+                    .font(Font.Job.headline1)
             }
-            .foregroundColor(.blue)
+            .foregroundColor(.primaryBlue)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            VStack(alignment: .leading, spacing: 40) {
+            VStack(alignment: .center, spacing: 40) {
                 HStack (spacing: 40){
                     HStack(spacing: 8) {
                         Text("구분")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 20, weight: .bold))
-                        DropdownButton(displayText: $displayText, options: options, onSelect: onSelect)
+                            .foregroundColor(.primaryBlue)
+                            .font(Font.Job.title3)
+                        DropdownButton(displayText: $educationHistory.educationType, options: educationTypes) { key in
+                            self.educationHistory.educationType = key
+                        }
                     }
                     
                     HStack(spacing: 8) {
                         Text("소재지")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 20, weight: .bold))
-                        DropdownButton(displayText: $displayText, options: options, onSelect: onSelect)
+                            .foregroundColor(.primaryBlue)
+                            .font(Font.Job.title3)
+                        DropdownButton(displayText: $educationHistory.location, options: locations) { key in
+                            self.educationHistory.location = key
+                        }
                     }
                     
                     HStack(spacing: 8) {
                         Text("학교명")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 20, weight: .bold))
-                        Button {
-                            print("학교 검색 팝업 띄우기")
-                        } label: {
-                            HStack {
-                                Text("OO대학교")
-                                    .font(.system(size: 20, weight: .regular))
-                                Image("search")
-                                    .frame(width: 18, height: 18)
-                            }
-                            .padding()
-                        }
-                        .buttonStyle(.borderedProminent)
+                            .foregroundColor(.primaryBlue)
+                            .font(Font.Job.title3)
+                        TextField("OOO학교", text: $educationHistory.name)
+                            .font(Font.Job.headline2)
+                            .textFieldStyle(CustomTextFieldStyle())
+//                        Button {
+//                            print("학교 검색 팝업 띄우기")
+//                        } label: {
+//                            HStack {
+//                                Text(educationHistory.name)
+//                                    .font(Font.Job.headline2)
+//                                Image("search")
+//                                    .frame(width: 18, height: 18)
+//                            }
+//                            .padding()
+//                        }
+//                        .buttonStyle(.borderedProminent)
                         
                     }
                 }
+                .zIndex(1)
+                
+                
                 HStack (spacing: 40){
                     HStack(spacing: 8) {
-                        Text("전공(고등학교 제외)")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 20, weight: .bold))
-                        TextField("test", text: $department)
-                            .font(.system(size: 20, weight: .regular))
+                        HStack(spacing: 0) {
+                            Text("전공")
+                                .font(Font.Job.title3)
+                            Text("(고등학교 제외)")
+                                .font(Font.Job.headline1)
+                        }
+                        .foregroundColor(.primaryBlue)
+                        TextField("OOOOOO", text: $educationHistory.major)
+                            .font(Font.Job.headline2)
                             .textFieldStyle(CustomTextFieldStyle())
                     }
                     
                     HStack(spacing: 8) {
-                        Text("부전공(고등학교 제외)")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 20, weight: .bold))
-                        TextField("test", text: $subDepartment)
-                            .font(.system(size: 20, weight: .regular))
+                        HStack(spacing: 0) {
+                            Text("부전공")
+                                .font(Font.Job.title3)
+                            Text("(고등학교 제외)")
+                                .font(Font.Job.headline1)
+                        }
+                        .foregroundColor(.primaryBlue)
+                        
+                        TextField("OOOOOO", text: $educationHistory.minor)
+                            .font(Font.Job.headline2)
                             .textFieldStyle(CustomTextFieldStyle())
                     }
                 }
+                .frame(minWidth: 719)
                 
                 HStack (spacing: 40){
                     
-                    DatePicker(selection: $enDate, displayedComponents: .date) {
+                    DatePicker(selection: $educationHistory.enterDate, displayedComponents: .date) {
                         Text("입학년월")
-                            .foregroundColor(.blue)
-                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(.primaryBlue)
+                            .font(Font.Job.title3)
                     }
-                    .datePickerStyle(CustomDatePickerStyle())
+                    .frame(width: 175)
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     
-                    HStack(spacing: 8) {
-                        
-                        DatePicker(selection: .constant(Date()), label: {
-                            Text("졸업년월")
-                                .foregroundColor(.blue)
-                                .font(.system(size: 20, weight: .bold))
-                        })
+                    DatePicker(selection: $educationHistory.graduateDate, displayedComponents: .date) {
+                        Text("졸업년월")
+                            .foregroundColor(.primaryBlue)
+                            .font(Font.Job.title3)
                     }
+                    .frame(width: 175)
                     
                 }
             }
-            .padding(.horizontal, 156)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             
             HStack(spacing: 16) {
                 Button {
@@ -121,20 +152,20 @@ struct WriteEducationView: View {
                     Text("이전")
                 }
                 .disabled(true)
-//                .buttonStyle(CustomButtonStyle(backgroundColor: .gray))
+                .buttonStyle(CustomButtonStyle(backgroundColor: .disabledButton))
                 
-                Button {
-                    print("다음")
+                NavigationLink {
+                    WriteCareerView()
                 } label: {
                     Text("다음")
                 }
-//                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                
             }
             
         }
-        .frame(minWidth: 1240, minHeight: 776)
         .padding(.horizontal, 80)
-        .padding(.top, 63)
+        .padding(.vertical, 63)
     }
 }
 

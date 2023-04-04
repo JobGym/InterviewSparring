@@ -54,15 +54,19 @@ extension DropdownOption {
 struct DropdownOptionElement: View {
     var val: String
     var key: String
-    var onSelect: ((_ key: String) -> Void)?
+    @Binding var isShowDropdown: Bool
+    var onSelect: ((_ val: String) -> Void)?
     
     var body: some View {
         Button {
             if let onSelect = self.onSelect {
-                onSelect(self.key)
+                onSelect(self.val)
             }
+            isShowDropdown.toggle()
         } label: {
             Text(self.val)
+                .font(Font.Job.headline2)
+                .foregroundColor(.black)
         }
         .buttonStyle(.borderless)
         .padding(.horizontal, 20)
@@ -74,11 +78,12 @@ struct DropdownOptionElement: View {
 struct DropdownMenu: View {
     var options: [DropdownOption]
     var onSelect: ((_ key: String) -> Void)?
+    @Binding var isShowDropdown: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(self.options, id:\.self) {option in
-                DropdownOptionElement(val: option.val, key: option.key, onSelect: self.onSelect)
+                DropdownOptionElement(val: option.val, key: option.key, isShowDropdown: $isShowDropdown, onSelect: self.onSelect)
             }
         }
         .background(Color.white)
@@ -96,7 +101,7 @@ struct DropdownButton: View {
     var options: [DropdownOption]
     var onSelect: ((_ key: String) -> Void)?
     
-    let buttonHeight: CGFloat = 30
+    let buttonHeight: CGFloat = 48
     
     var body: some View {
         Button(action: {
@@ -105,30 +110,29 @@ struct DropdownButton: View {
             }
         }) {
             HStack {
-                Text(displayText)
+                Text(displayText == "" ? "OOO" : displayText)
+                    .font(Font.Job.headline2)
+                    .foregroundColor(.black)
+                    .frame(maxWidth: .infinity, alignment: .center)
                 Spacer()
                 Image(self.isShowDropdown ? "dropdown.up" : "dropdown")
             }
         }
         .buttonStyle(.borderless)
         .padding(.horizontal)
-        .cornerRadius(12)
+        .cornerRadius(84)
         .frame(height: self.buttonHeight)
-        .frame(minWidth: 150)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.red, lineWidth: 1)
-        )
+        .frame(width: 175)
         .overlay(
             VStack {
                 if self.isShowDropdown {
                     Spacer(minLength: buttonHeight + 10)
-                    DropdownMenu(options: self.options, onSelect: self.onSelect)
+                    DropdownMenu(options: self.options, onSelect: self.onSelect, isShowDropdown: $isShowDropdown)
                 }
-            }, alignment: .topLeading
+            }, alignment: .top
         )
         .background(
-            RoundedRectangle(cornerRadius: 12).fill(Color.white)
+            RoundedRectangle(cornerRadius: 84).fill(Color.white)
         )
     }
 }

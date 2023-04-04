@@ -11,7 +11,11 @@ extension Color {
  
     static let primaryBlue = Color("primaryBlue")
     static let blueBackground = Color("backgroundColor")
+    static let progressGray = Color("progressGray")
+    static let textDarkGray = Color("textDarkGray")
     
     static let mainGradientTop = Color("mainGradientTop")
     static let mainGradientBottom = Color("mainGradientBottom")
+    
+    static let disabledButton = Color("disabledButton")
 }

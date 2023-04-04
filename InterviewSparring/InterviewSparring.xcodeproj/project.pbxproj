@@ -25,6 +25,10 @@
 		F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0029DC748C008B1473 /* StartView.swift */; };
 		F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */; };
 		F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */; };
+		F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */; };
+		F9ED3D0929DC8314008B1473 /* WriteCareerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */; };
+		F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */; };
+		F9ED3D0D29DC8797008B1473 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		F9ED3D0029DC748C008B1473 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationHistory.swift; sourceTree = "<group>"; };
+		F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCareerView.swift; sourceTree = "<group>"; };
+		F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCareerView.swift; sourceTree = "<group>"; };
+		F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +117,15 @@
 				F9B91C9229D2EF05006F5688 /* InterviewSparring.xcdatamodeld */,
 				F9B91C8D29D2EF05006F5688 /* Preview Content */,
 				F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */,
+				F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */,
+				F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */,
+				F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */,
 				F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */,
 				F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */,
 				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
 				F9ED3D0029DC748C008B1473 /* StartView.swift */,
 				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
+				F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */,
 			);
 			path = InterviewSparring;
 			sourceTree = "<group>";
@@ -203,17 +215,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
+				F9ED3D0D29DC8797008B1473 /* Array+Extension.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
 				F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */,
 				F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
 				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
 				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
+				F9ED3D0929DC8314008B1473 /* WriteCareerView.swift in Sources */,
 				F9ED3CC429DC6590008B1473 /* WriteEducationView.swift in Sources */,
 				F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */,
 				F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */,
+				F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */,
 				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
 				F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */,
 				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
