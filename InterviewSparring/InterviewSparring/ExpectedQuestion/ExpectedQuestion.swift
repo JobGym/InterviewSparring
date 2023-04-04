@@ -9,16 +9,34 @@ import SwiftUI
 
 struct CircleStyle: ButtonStyle {
     @Binding var isPressed : Bool
+    
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
-        Circle()
-            .fill(Color.primaryBlue)
-            .overlay(
-                Image(isPressed ? "stop" :"microphone")
-            )
-            .frame(width: 160, height: 160)
+        ZStack{
+            Circle()
+                .fill(Color.primaryBlue)
+                .opacity(0.10)
+                .frame(width: 160, height: 160)
+                .scaleEffect(isPressed ? 1.5 : 1)
+                .animation(isPressed ? .easeInOut(duration: 1).repeatForever() : nil)
+                //.animation(Animation.linear(duration: 0.5).repeatForever(autoreverses: true))
+            
+            Circle()
+                .fill(Color.primaryBlue)
+                .opacity(0.20)
+                .frame(width: 160, height: 160)
+                .scaleEffect(isPressed ? 1.25 : 1)
+                .animation(isPressed ? .easeInOut(duration: 1).repeatForever() : nil)
+                //.animation(Animation.linear(duration: 0.5).repeatForever(autoreverses: false).speed(1))
+                
+            Circle()
+                .fill(Color.primaryBlue)
+                .overlay(
+                    Image(isPressed ? "stop" :"microphone")
+                )
+                .frame(width: 160, height: 160)
+        }
     }
 }
-
 struct RecordStyle: ButtonStyle {
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         ZStack {
@@ -33,9 +51,7 @@ struct RecordStyle: ButtonStyle {
         }
     }
 }
-
 struct ExpectedQuestion: View {
-
     @State var isPressed = false
     
     var body: some View {
