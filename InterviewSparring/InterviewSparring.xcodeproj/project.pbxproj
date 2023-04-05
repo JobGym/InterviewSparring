@@ -12,6 +12,10 @@
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
 		F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795F929DD765400DD4848 /* WriteQualificationView.swift */; };
 		F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */; };
+		F947960029DD92B200DD4848 /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FF29DD92B200DD4848 /* Career.swift */; };
+		F947960229DD930000DD4848 /* Qualification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947960129DD930000DD4848 /* Qualification.swift */; };
+		F947960429DD931D00DD4848 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947960329DD931D00DD4848 /* Language.swift */; };
+		F947960729DD94FE00DD4848 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947960629DD94FE00DD4848 /* DataManager.swift */; };
 		F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
 		F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8929D2EF04006F5688 /* ContentView.swift */; };
 		F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8B29D2EF05006F5688 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		F94795F929DD765400DD4848 /* WriteQualificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteQualificationView.swift; sourceTree = "<group>"; };
 		F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLanguageView.swift; sourceTree = "<group>"; };
+		F94795FF29DD92B200DD4848 /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
+		F947960129DD930000DD4848 /* Qualification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qualification.swift; sourceTree = "<group>"; };
+		F947960329DD931D00DD4848 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		F947960629DD94FE00DD4848 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSparringApp.swift; sourceTree = "<group>"; };
 		F9B91C8929D2EF04006F5688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,8 +94,20 @@
 			children = (
 				2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */,
 				2AC9213429DAA932005B39FD /* QuestionList.swift */,
+				F947960629DD94FE00DD4848 /* DataManager.swift */,
 			);
 			path = ExpectedQuestion;
+			sourceTree = "<group>";
+		};
+		F947960529DD932400DD4848 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F947960129DD930000DD4848 /* Qualification.swift */,
+				F94795FF29DD92B200DD4848 /* Career.swift */,
+				F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */,
+				F947960329DD931D00DD4848 /* Language.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F9B91C7B29D2EF04006F5688 = {
@@ -114,6 +134,7 @@
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
 				F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */,
+				F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */,
 				2A0DE1CB29D8A14700E931B4 /* Font */,
 				F9B91C8B29D2EF05006F5688 /* Assets.xcassets */,
 				F9B91C9029D2EF05006F5688 /* Persistence.swift */,
@@ -124,14 +145,13 @@
 				F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */,
 				F94795F929DD765400DD4848 /* WriteQualificationView.swift */,
 				F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */,
+				F947960529DD932400DD4848 /* Model */,
 				F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */,
-				F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */,
 				F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */,
 				F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */,
 				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
 				F9ED3D0029DC748C008B1473 /* StartView.swift */,
 				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
-				F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */,
 			);
 			path = InterviewSparring;
 			sourceTree = "<group>";
@@ -222,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */,
+				F947960729DD94FE00DD4848 /* DataManager.swift in Sources */,
+				F947960029DD92B200DD4848 /* Career.swift in Sources */,
 				F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
@@ -237,9 +259,11 @@
 				F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */,
 				F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */,
 				F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */,
+				F947960229DD930000DD4848 /* Qualification.swift in Sources */,
 				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
 				F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */,
 				F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */,
+				F947960429DD931D00DD4848 /* Language.swift in Sources */,
 				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

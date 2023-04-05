@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EducationHistory {
+struct EducationHistory: Hashable {
     var educationType: String
     var location: String
     var name: String

@@ -123,7 +123,7 @@ struct AddCareerView: View {
                     print("등록")
                     let distanceMonth = Calendar.current.dateComponents([.month], from: enterDate, to: resignateDate).month
                     career.period = (distanceMonth?.formatted())!
-                    careerList[0].append(career)
+                    careerList[0].insert(career, at: 0)
                     
                     isShowAddView.toggle()
                     

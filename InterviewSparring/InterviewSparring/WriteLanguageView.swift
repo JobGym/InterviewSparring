@@ -7,16 +7,11 @@
 
 import SwiftUI
 
-struct Language {
-    var language: String
-    var name: String
-    var grade: String
-    var score: String
-    var getDate: Date
-    var authority: String
-}
-
 struct WriteLanguageView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataManager: DataManager
+    @Binding var language: Language
+    
     let languages = [
         DropdownOption(key: "English", val: "영어"),
         DropdownOption(key: "Japanese", val: "일어"),
@@ -36,7 +31,6 @@ struct WriteLanguageView: View {
         DropdownOption(key: "German", val: "독일어"),
         DropdownOption(key: "other", val: "기타")
     ]
-    @State var language = Language(language: "", name: "", grade: "", score: "", getDate: Date(), authority: "")
     
     var body: some View {
         VStack(spacing: 140) {
@@ -112,18 +106,25 @@ struct WriteLanguageView: View {
             
             HStack(spacing: 16) {
                 Button {
-                    print("이전")
+                    dismiss()
                 } label: {
                     Text("이전")
                 }
                 .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 
-                NavigationLink {
-                    
-                } label: {
-                    Text("다음")
+                if #available(macOS 13.0, *) {
+//                    NavigationLink(value: dataManager.careers) {
+//                        Text("다음")
+//                    }
+//                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                } else {
+                    NavigationLink {
+                        
+                    } label: {
+                        Text("다음")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
             }
         }
         .padding(.horizontal, 80)
@@ -134,6 +135,6 @@ struct WriteLanguageView: View {
 
 struct WriteLanguageView_Previews: PreviewProvider {
     static var previews: some View {
-        WriteLanguageView()
+        WriteLanguageView(language: .constant(Language(language: "", name: "", grade: "", score: "", getDate: Date(), authority: "")))
     }
 }

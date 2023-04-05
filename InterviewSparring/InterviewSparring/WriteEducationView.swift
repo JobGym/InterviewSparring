@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct WriteEducationView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataManager: DataManager
+    @Binding var educationHistory: EducationHistory
+    
     let educationTypes = [
         DropdownOption(key: "고등학교", val: "고등학교"),
         DropdownOption(key: "전문대학", val: "전문대학"),
@@ -35,9 +39,6 @@ struct WriteEducationView: View {
         DropdownOption(key: "Jeju", val: "제주"),
         DropdownOption(key: "Overseas", val: "해외")
     ]
-    
-    @State var educationHistory = EducationHistory(educationType: "", location: "", name: "", major: "", minor: "", enterDate: Date(), graduateDate: Date())
-    
     var body: some View {
         VStack(spacing: 140) {
             VStack(alignment: .leading, spacing: 0) {
@@ -147,30 +148,29 @@ struct WriteEducationView: View {
             
             HStack(spacing: 16) {
                 Button {
-                    print("이전")
+                    dismiss()
                 } label: {
                     Text("이전")
                 }
                 .disabled(true)
                 .buttonStyle(CustomButtonStyle(backgroundColor: .disabledButton))
                 
-                NavigationLink {
-                    WriteCareerView()
-                } label: {
-                    Text("다음")
+                if #available(macOS 13.0, *) {
+                    NavigationLink(value: dataManager.careers) {
+                        Text("다음")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                } else {
+                    NavigationLink {
+                        WriteCareerView(careerList: $dataManager.careers)
+                    } label: {
+                        Text("다음")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                
             }
-            
         }
         .padding(.horizontal, 80)
         .padding(.vertical, 63)
-    }
-}
-
-struct WriteEducationView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteEducationView()
     }
 }

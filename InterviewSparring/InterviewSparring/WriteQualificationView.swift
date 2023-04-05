@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-struct Qualification {
-    var name: String
-    var grade: String
-    var getDate: Date
-    var authority: String
-}
 struct WriteQualificationView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataManager: DataManager
+    @Binding var qualification: Qualification
     let grades = [
         DropdownOption(key: "1", val: "1급"),
         DropdownOption(key: "2", val: "2급"),
@@ -28,7 +25,6 @@ struct WriteQualificationView: View {
         DropdownOption(key: "other", val: "기타")
     ]
     
-    @State var qualification = Qualification(name: "", grade: "", getDate: Date(), authority: "")
     var body: some View {
         VStack(spacing: 140) {
             
@@ -83,18 +79,25 @@ struct WriteQualificationView: View {
             
             HStack(spacing: 16) {
                 Button {
-                    print("이전")
+                    dismiss()
                 } label: {
                     Text("이전")
                 }
                 .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 
-                NavigationLink {
-                    WriteLanguageView()
-                } label: {
-                    Text("다음")
+                if #available(macOS 13.0, *) {
+                    NavigationLink(value: dataManager.language) {
+                        Text("다음")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                } else {
+                    NavigationLink {
+                        WriteLanguageView(language: $dataManager.language)
+                    } label: {
+                        Text("다음")
+                    }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
             }
         }
         .padding(.horizontal, 80)
@@ -104,6 +107,6 @@ struct WriteQualificationView: View {
 
 struct WriteQualificationView_Previews: PreviewProvider {
     static var previews: some View {
-        WriteQualificationView()
+        WriteQualificationView(qualification: .constant(Qualification(name: "", grade: "", getDate: Date(), authority: "")))
     }
 }

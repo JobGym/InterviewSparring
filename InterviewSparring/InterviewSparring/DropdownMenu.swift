@@ -104,3 +104,12 @@ struct DropdownButton: View {
         )
     }
 }
+
+enum EmploymentForm: String {
+    case permanent = "정규직"
+    case contract = "계약직"
+    case intern = "인턴"
+    case dispatched = "파견직"
+    case freelance = "프리랜서"
+    case part = "아르바이트"
+}

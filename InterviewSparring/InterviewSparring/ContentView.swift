@@ -11,8 +11,11 @@ import CoreData
 
 
 struct ContentView: View {
+    @StateObject var dataManager = DataManager()
+    
     var body: some View {
         StartView()
+            .environmentObject(dataManager)
     }
 }
 

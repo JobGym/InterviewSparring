@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct WriteCareerView: View {
-    @State var careerList: [[Career]] = [
-        Career(employmentForm: EmploymentForm.contract.rawValue, firm: "삼성전자", department: "SW개발팀", period: "6", isResignate: false, position: "SW엔지니어", details: "회사 사이트 웹프로젝트 어쩌고"),
-        Career(employmentForm: EmploymentForm.part.rawValue, firm: "삼성전자", department: "SW개발팀", period: "6", isResignate: false, position: "SW엔지니어", details: "가나다라마바사아자차카타파하가나다라마바사아자차카타파하")
-    ].chunked(into: 7)
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataManager: DataManager
+    @Binding var careerList: [[Career]]
     
     @State var isShowAddView = false
     @State var progressValue: CGFloat = 50.0
@@ -133,16 +132,25 @@ struct WriteCareerView: View {
                         Spacer()
                         Button {
                             print("이전")
+                            dismiss()
                         } label: {
                             Text("이전")
                         }
                         
-                        NavigationLink {
-                            WriteQualificationView()
-                        } label: {
-                            Text("다음")
+                        if #available(macOS 13.0, *) {
+                            NavigationLink(value: dataManager.qualification) {
+                                Text("다음")
+                            }
+                            .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                        } else {
+                            NavigationLink {
+                                WriteQualificationView(qualification: $dataManager.qualification)
+                            } label: {
+                                Text("다음")
+                            }
+                            .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                         }
-                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                        
                         Spacer()
                     }
                     .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
@@ -176,30 +184,8 @@ struct ProgressBar: View {
     }
 }
 
-struct Career: Hashable, Identifiable {
-    let id = UUID()
-    var employmentForm: String
-    var firm: String
-    var department: String
-    var period: String
-    var isResignate: Bool
-    var position: String
-    var details: String
-}
-
-enum EmploymentForm: String {
-    case permanent = "정규직"
-    case contract = "계약직"
-    case intern = "인턴"
-    case dispatched = "파견직"
-    case freelance = "프리랜서"
-    case part = "아르바이트"
-}
-
-
-
 struct WriteCareerView_Previews: PreviewProvider {
     static var previews: some View {
-        WriteCareerView()
+        WriteCareerView(careerList: .constant([[Career]]()))
     }
 }
