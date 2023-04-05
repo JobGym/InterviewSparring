@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
+            .font(.Job.headline2)
             .frame(width: 175, alignment: .center)
             .textFieldStyle(.plain)
             .padding(EdgeInsets(top: 10, leading: 31, bottom: 10, trailing: 31))

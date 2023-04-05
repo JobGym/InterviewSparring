@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct AddCareerView: View {
-    @State var career = Career(employmentForm: EmploymentForm.contract, firm: "", department: "", period: "", isResignate: false, position: "", details: "")
+    
+    @State var career = Career(employmentForm: "", firm: "", department: "", period: "", isResignate: false, position: "", details: "")
     @Binding var isShowAddView: Bool
+    @Binding var careerList: [[Career]]
+    
+    @State var enterDate = Date()
+    @State var resignateDate = Date()
     
     let employmentForm = [
         DropdownOption(key: EmploymentForm.permanent.rawValue, val: EmploymentForm.permanent.rawValue),
@@ -22,104 +27,118 @@ struct AddCareerView: View {
     @State var employmentDisplayText = ""
     
     var body: some View {
-        VStack {
+        VStack(spacing: 93) {
             Text("경력추가")
-                .font(.system(size: 32, weight: .black))
-                .foregroundColor(.blue)
+                .font(.Job.title1)
+                .foregroundColor(.primaryBlue)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 52)
                 .padding(.top, 40)
             
-            VStack(spacing: 140) {
-                VStack(alignment: .leading) {
-                    HStack (spacing: 40){
-                        HStack(spacing: 8) {
-                            Text("고용형태")
-                            DropdownButton(displayText: $employmentDisplayText, options: employmentForm)
-                        }
-                        
-                        HStack(spacing: 8) {
-                            Text("회사명")
-                            TextField("회사", text: $career.firm)
-                        }
-                        
-                        HStack(spacing: 8) {
-                            Text("부서명")
-                            Button {
-                                print("학교 검색 팝업 띄우기")
-                            } label: {
-                                HStack {
-                                    Text("OO대학교")
-                                        .font(.system(size: 20, weight: .regular))
-                                    Image("search")
-                                        .frame(width: 18, height: 18)
-                                }
-                                .padding()
-                            }
-                            .buttonStyle(.borderedProminent)
-                            
-                        }
-                    }
-                    HStack (spacing: 40){
-                        HStack(spacing: 8) {
-                            Text("부서명")
-                            TextField("test", text: $career.department)
-                        }
-                        
-                        HStack(spacing: 8) {
-                            Text("직책")
-                            TextField("test", text: $career.position)
+            VStack(alignment: .center, spacing: 40) {
+                HStack (spacing: 40){
+                    HStack(spacing: 8) {
+                        Text("고용형태")
+                            .font(.Job.title3)
+                            .foregroundColor(.primaryBlue)
+                        DropdownButton(displayText: $career.employmentForm, options: employmentForm) { key in
+                            career.employmentForm = key
                         }
                     }
                     
-                    HStack (spacing: 40){
-                        HStack(spacing: 8) {
-                            Text("입사일")
-                            DatePicker(selection: .constant(Date()), label: { Text("입학년월") })
-                        }
-                        
-                        HStack(spacing: 8) {
-                            Text("퇴사유무")
-                            
-                        }
-                        
-                        if career.isResignate {
-                            HStack(spacing: 8) {
-                                Text("입사일")
-                                DatePicker(selection: .constant(Date()), label: { Text("입학년월") })
-                            }
-                        }
+                    HStack(spacing: 8) {
+                        Text("회사명")
+                            .font(.Job.title3)
+                            .foregroundColor(.primaryBlue)
+                        TextField("회사", text: $career.firm)
+                    }
+                }
+                .zIndex(1)
+                
+                HStack (spacing: 40){
+                    HStack(spacing: 8) {
+                        Text("부서명")
+                            .font(.Job.title3)
+                            .foregroundColor(.primaryBlue)
+                        TextField("XXXXXXX", text: $career.department)
+                    }
+                    
+                    HStack(spacing: 8) {
+                        Text("직책")
+                            .font(.Job.title3)
+                            .foregroundColor(.primaryBlue)
+                        TextField("????", text: $career.position)
+                    }
+                    HStack(spacing: 8) {
+                        Text("업무내용")
+                            .font(.Job.title3)
+                            .foregroundColor(.primaryBlue)
+                        TextField("????", text: $career.details)
                     }
                 }
                 
-                HStack(spacing: 16) {
-                    Button {
-                        print("취소")
-                        isShowAddView.toggle()
-                    } label: {
-                        Text("취소")
+                HStack (spacing: 40){
+                    DatePicker(selection: $enterDate, displayedComponents: .date) {
+                        Text("입사일")
+                            .foregroundColor(.primaryBlue)
+                            .font(Font.Job.title3)
                     }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .orange))
-                    Button {
-                        print("등록")
-                        isShowAddView.toggle()
-                    } label: {
-                        Text("등록")
-                    }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                    .frame(width: 175)
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     
+                    HStack(spacing: 8) {
+                        Text("퇴사유무")
+                            .font(.Job.title3)
+                            .foregroundColor(.primaryBlue)
+                        Button {
+                            career.isResignate.toggle()
+                        } label: {
+                            Image(career.isResignate ? "check" : "unCheck")
+                        }
+                        .buttonStyle(.borderless)
+                    }
+                    
+                    if career.isResignate {
+                        DatePicker(selection: $resignateDate, displayedComponents: .date) {
+                            Text("퇴사일")
+                                .foregroundColor(.primaryBlue)
+                                .font(Font.Job.title3)
+                        }
+                        .frame(width: 175)
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    }
                 }
+            }
+            .textFieldStyle(CustomTextFieldStyle())
+            
+            HStack(spacing: 16) {
+                Button {
+                    print("취소")
+                    isShowAddView.toggle()
+                } label: {
+                    Text("취소")
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .systemCancel))
+                Button {
+                    print("등록")
+                    let distanceMonth = Calendar.current.dateComponents([.month], from: enterDate, to: resignateDate).month
+                    career.period = (distanceMonth?.formatted())!
+                    careerList[0].append(career)
+                    
+                    isShowAddView.toggle()
+                    
+                } label: {
+                    Text("등록")
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 
             }
+            
+            
             .padding(EdgeInsets(top: 0, leading: 161, bottom: 64, trailing: 161))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(minWidth: 1107, minHeight: 613)
-    }
-}
-
-struct AddCareerView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddCareerView(isShowAddView: .constant(true))
+        .background(Color.blueBackground)
     }
 }

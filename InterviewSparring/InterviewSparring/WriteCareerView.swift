@@ -9,8 +9,8 @@ import SwiftUI
 
 struct WriteCareerView: View {
     @State var careerList: [[Career]] = [
-        Career(employmentForm: EmploymentForm.contract, firm: "삼성전자", department: "SW개발팀", period: "6개월", isResignate: false, position: "SW엔지니어", details: "회사 사이트 웹프로젝트 어쩌고"),
-        Career(employmentForm: EmploymentForm.part, firm: "삼성전자", department: "SW개발팀", period: "6개월", isResignate: false, position: "SW엔지니어", details: "가나다라마바사아자차카타파하가나다라마바사아자차카타파하")
+        Career(employmentForm: EmploymentForm.contract.rawValue, firm: "삼성전자", department: "SW개발팀", period: "6", isResignate: false, position: "SW엔지니어", details: "회사 사이트 웹프로젝트 어쩌고"),
+        Career(employmentForm: EmploymentForm.part.rawValue, firm: "삼성전자", department: "SW개발팀", period: "6", isResignate: false, position: "SW엔지니어", details: "가나다라마바사아자차카타파하가나다라마바사아자차카타파하")
     ].chunked(into: 7)
     
     @State var isShowAddView = false
@@ -92,13 +92,13 @@ struct WriteCareerView: View {
                             ForEach(career) { content in
                                 VStack {
                                     HStack(spacing: spacing) {
-                                        Text(content.employmentForm.rawValue)
+                                        Text(content.employmentForm)
                                             .frame(width: width/12, alignment: .center)
                                         Text(content.firm)
                                             .frame(width: width/7.5, alignment: .center)
                                         Text(content.department)
                                             .frame(width: width/7.5, alignment: .center)
-                                        Text(content.period)
+                                        Text("\(content.period)개월")
                                             .frame(width: width/6, alignment: .center)
                                         Text(content.isResignate ? "유" : "무")
                                             .frame(width: width/10, alignment: .center)
@@ -136,11 +136,13 @@ struct WriteCareerView: View {
                         } label: {
                             Text("이전")
                         }
-                        Button {
-                            print("다음")
+                        
+                        NavigationLink {
+                            WriteQualificationView()
                         } label: {
                             Text("다음")
                         }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                         Spacer()
                     }
                     .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
@@ -151,10 +153,7 @@ struct WriteCareerView: View {
             }
         }
         .sheet(isPresented: $isShowAddView) {
-            AddCareerView(isShowAddView: $isShowAddView)
-        }
-        .onAppear() {
-            print(careerList)
+            AddCareerView(isShowAddView: $isShowAddView, careerList: $careerList)
         }
     }
 }
@@ -179,7 +178,7 @@ struct ProgressBar: View {
 
 struct Career: Hashable, Identifiable {
     let id = UUID()
-    var employmentForm: EmploymentForm
+    var employmentForm: String
     var firm: String
     var department: String
     var period: String

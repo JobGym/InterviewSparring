@@ -10,6 +10,8 @@
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
+		F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795F929DD765400DD4848 /* WriteQualificationView.swift */; };
+		F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */; };
 		F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
 		F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8929D2EF04006F5688 /* ContentView.swift */; };
 		F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8B29D2EF05006F5688 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
+		F94795F929DD765400DD4848 /* WriteQualificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteQualificationView.swift; sourceTree = "<group>"; };
+		F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLanguageView.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSparringApp.swift; sourceTree = "<group>"; };
 		F9B91C8929D2EF04006F5688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				F9B91C8D29D2EF05006F5688 /* Preview Content */,
 				F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */,
 				F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */,
+				F94795F929DD765400DD4848 /* WriteQualificationView.swift */,
+				F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */,
 				F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */,
 				F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */,
 				F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */,
@@ -215,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */,
 				F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
@@ -231,6 +238,7 @@
 				F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */,
 				F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */,
 				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
+				F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */,
 				F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */,
 				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
 			);

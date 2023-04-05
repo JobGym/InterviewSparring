@@ -16,41 +16,6 @@ struct DropdownOption: Hashable {
     
 }
 
-extension DropdownOption {
-    func fetchAcademicCategory() -> [DropdownOption] {
-        return [
-            DropdownOption(key: "highschool", val: "고등학교"),
-            DropdownOption(key: "college", val: "전문대학"),
-            DropdownOption(key: "university", val: "대학교"),
-            DropdownOption(key: "master", val: "대학원(석사)"),
-            DropdownOption(key: "Doctor", val: "대학원(박사)"),
-        ]
-    }
-    func fetchLocation() -> [DropdownOption] {
-        return [
-            DropdownOption(key: "Seoul", val: "서울"),
-            DropdownOption(key: "Gyeonggi", val: "경기"),
-            DropdownOption(key: "Incheon", val: "인천"),
-            DropdownOption(key: "Gangwon", val: "강원"),
-            DropdownOption(key: "Chungbuk", val: "충북"),
-            DropdownOption(key: "Chungnam", val: "충남"),
-            DropdownOption(key: "Daejeon", val: "대전"),
-            DropdownOption(key: "Sejong", val: "세종"),
-            DropdownOption(key: "busan", val: "부산"),
-            DropdownOption(key: "Ulsan", val: "울산"),
-            DropdownOption(key: "Daegu", val: "대구"),
-            DropdownOption(key: "Gyeongbuk", val: "경북"),
-            DropdownOption(key: "Gyeongnam", val: "경남"),
-            DropdownOption(key: "Jeonbuk", val: "전북"),
-            DropdownOption(key: "Jeonnam", val: "전남"),
-            DropdownOption(key: "Gwangju", val: "광주"),
-            DropdownOption(key: "Jeju", val: "제주"),
-            DropdownOption(key: "Overseas", val: "해외")
-        ]
-    }
-}
-
-
 struct DropdownOptionElement: View {
     var val: String
     var key: String
@@ -81,11 +46,14 @@ struct DropdownMenu: View {
     @Binding var isShowDropdown: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            ForEach(self.options, id:\.self) {option in
-                DropdownOptionElement(val: option.val, key: option.key, isShowDropdown: $isShowDropdown, onSelect: self.onSelect)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(self.options, id:\.self) {option in
+                    DropdownOptionElement(val: option.val, key: option.key, isShowDropdown: $isShowDropdown, onSelect: self.onSelect)
+                }
             }
         }
+        .frame(height: 175)
         .background(Color.white)
         .cornerRadius(12)
         .overlay(

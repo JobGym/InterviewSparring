@@ -13,6 +13,7 @@ extension Color {
     static let blueBackground = Color("backgroundColor")
     static let progressGray = Color("progressGray")
     static let textDarkGray = Color("textDarkGray")
+    static let systemCancel = Color("systemCancel")
     
     static let mainGradientTop = Color("mainGradientTop")
     static let mainGradientBottom = Color("mainGradientBottom")
