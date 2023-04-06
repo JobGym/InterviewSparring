@@ -8,7 +8,7 @@ import SwiftUI
 
 struct CustomDatePickerStyle: DatePickerStyle {
     @State private var currentDate = Date()
-    @available(macOS 13.0, *)
+    @available(iOS 16.0, *)
     func makeBody(configuration: Configuration) -> some View {
         VStack {
             configuration.label

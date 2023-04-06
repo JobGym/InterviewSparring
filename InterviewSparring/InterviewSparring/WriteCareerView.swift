@@ -122,7 +122,7 @@ struct WriteCareerView: View {
                             Text("이전")
                         }
                         
-                        if #available(macOS 13.0, *) {
+                        if #available(iOS 16.0, *) {
                             NavigationLink(value: dataManager.qualification) {
                                 Text("다음")
                             }

@@ -11,7 +11,7 @@ struct StartView: View {
     @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
-        if #available(macOS 13.0, *) {
+        if #available(iOS 16.0, *) {
             ZStack {
                 Color.blueBackground.ignoresSafeArea()
                 
@@ -73,7 +73,6 @@ struct StartView: View {
                     .padding(.top, 56)
                 }
             }
-            .frame(minWidth: 1240, minHeight: 776)
             .background(Color.blueBackground)
         }
         

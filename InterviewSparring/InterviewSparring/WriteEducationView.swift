@@ -160,7 +160,7 @@ struct WriteEducationView: View {
                     .disabled(true)
                     .buttonStyle(CustomButtonStyle(backgroundColor: .disabledButton))
                     
-                    if #available(macOS 13.0, *) {
+                    if #available(iOS 16.0, *) {
                         NavigationLink(value: dataManager.careers) {
                             Text("다음")
                         }
