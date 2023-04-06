@@ -18,23 +18,8 @@ struct WriteCareerView: View {
     
     var body: some View {
         
-        ZStack(alignment: .trailing) {
-            HStack(alignment: .center) {
-                Spacer()
-                VStack {
-                    Spacer()
-                    Text("이력서제출")
-                    Spacer()
-                    Text("자소서제출")
-                    Spacer()
-                }
-                .foregroundColor(.textDarkGray)
-                .font(Font.Job.caption)
-                .frame(width: 10)
-                .fixedSize(horizontal: true, vertical: false)
-                ProgressBar(value: $progressValue)
-                    .frame(width: 10)
-            }
+        ZStack(alignment: .trailing){
+            ProgressView(value: 99)
             
             GeometryReader { geo in
                 let spacing: CGFloat = 10
@@ -167,7 +152,7 @@ struct WriteCareerView: View {
 }
 
 struct ProgressBar: View {
-    @Binding var value: CGFloat
+    var value: CGFloat
     
     var body: some View {
         GeometryReader { geometry in
@@ -180,6 +165,29 @@ struct ProgressBar: View {
                     .foregroundColor(.primaryBlue)
                 
             }
+        }
+    }
+}
+
+struct ProgressView:View {
+    var value: CGFloat
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Spacer()
+            VStack {
+                Spacer()
+                Text("이력서제출")
+                    .padding(.bottom, 305)
+                Text("자소서제출")
+                Spacer()
+            }
+            .foregroundColor(.textDarkGray)
+            .font(Font.Job.caption)
+            .frame(width: 10)
+            .fixedSize(horizontal: true, vertical: false)
+            ProgressBar(value: value)
+                .frame(width: 10)
         }
     }
 }

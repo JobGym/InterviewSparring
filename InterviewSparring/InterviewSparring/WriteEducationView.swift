@@ -40,137 +40,149 @@ struct WriteEducationView: View {
         DropdownOption(key: "Overseas", val: "해외")
     ]
     var body: some View {
-        VStack(spacing: 140) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("이력서 제출")
-                    .font(Font.Job.title1)
-                Text("학력사항(최종)")
-                    .font(Font.Job.headline1)
-            }
-            .foregroundColor(.primaryBlue)
-            .frame(maxWidth: .infinity, alignment: .leading)
+        
+        ZStack(alignment: .trailing) {
             
-            VStack(alignment: .center, spacing: 40) {
-                HStack (spacing: 40){
-                    HStack(spacing: 8) {
-                        Text("구분")
-                            .foregroundColor(.primaryBlue)
-                            .font(Font.Job.title3)
-                        DropdownButton(displayText: $educationHistory.educationType, options: educationTypes) { key in
-                            self.educationHistory.educationType = key
+            ProgressView(value: 0)
+            
+            VStack(spacing: 140) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("이력서 제출")
+                        .font(Font.Job.title1)
+                    Text("학력사항(최종)")
+                        .font(Font.Job.headline1)
+                }
+                .foregroundColor(.primaryBlue)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                VStack(alignment: .center, spacing: 40) {
+                    HStack (spacing: 40){
+                        HStack(spacing: 8) {
+                            Text("구분")
+                                .foregroundColor(.primaryBlue)
+                                .font(Font.Job.title3)
+                            DropdownButton(displayText: $educationHistory.educationType, options: educationTypes) { key in
+                                self.educationHistory.educationType = key
+                            }
+                        }
+                        
+                        HStack(spacing: 8) {
+                            Text("소재지")
+                                .foregroundColor(.primaryBlue)
+                                .font(Font.Job.title3)
+                            DropdownButton(displayText: $educationHistory.location, options: locations) { key in
+                                self.educationHistory.location = key
+                            }
+                        }
+                        
+                        HStack(spacing: 8) {
+                            Text("학교명")
+                                .foregroundColor(.primaryBlue)
+                                .font(Font.Job.title3)
+                            TextField("OOO학교", text: $educationHistory.name)
+                                .font(Font.Job.headline2)
+                                .textFieldStyle(CustomTextFieldStyle())
+                            //                        Button {
+                            //                            print("학교 검색 팝업 띄우기")
+                            //                        } label: {
+                            //                            HStack {
+                            //                                Text(educationHistory.name)
+                            //                                    .font(Font.Job.headline2)
+                            //                                Image("search")
+                            //                                    .frame(width: 18, height: 18)
+                            //                            }
+                            //                            .padding()
+                            //                        }
+                            //                        .buttonStyle(.borderedProminent)
+                            
                         }
                     }
+                    .zIndex(1)
                     
-                    HStack(spacing: 8) {
-                        Text("소재지")
+                    
+                    HStack (spacing: 40){
+                        HStack(spacing: 8) {
+                            HStack(spacing: 0) {
+                                Text("전공")
+                                    .font(Font.Job.title3)
+                                Text("(고등학교 제외)")
+                                    .font(Font.Job.headline1)
+                            }
                             .foregroundColor(.primaryBlue)
-                            .font(Font.Job.title3)
-                        DropdownButton(displayText: $educationHistory.location, options: locations) { key in
-                            self.educationHistory.location = key
+                            TextField("OOOOOO", text: $educationHistory.major)
+                                .font(Font.Job.headline2)
+                                .textFieldStyle(CustomTextFieldStyle())
+                        }
+                        
+                        HStack(spacing: 8) {
+                            HStack(spacing: 0) {
+                                Text("부전공")
+                                    .font(Font.Job.title3)
+                                Text("(고등학교 제외)")
+                                    .font(Font.Job.headline1)
+                            }
+                            .foregroundColor(.primaryBlue)
+                            
+                            TextField("OOOOOO", text: $educationHistory.minor)
+                                .font(Font.Job.headline2)
+                                .textFieldStyle(CustomTextFieldStyle())
                         }
                     }
+                    .frame(minWidth: 719)
                     
-                    HStack(spacing: 8) {
-                        Text("학교명")
-                            .foregroundColor(.primaryBlue)
-                            .font(Font.Job.title3)
-                        TextField("OOO학교", text: $educationHistory.name)
-                            .font(Font.Job.headline2)
-                            .textFieldStyle(CustomTextFieldStyle())
-//                        Button {
-//                            print("학교 검색 팝업 띄우기")
-//                        } label: {
-//                            HStack {
-//                                Text(educationHistory.name)
-//                                    .font(Font.Job.headline2)
-//                                Image("search")
-//                                    .frame(width: 18, height: 18)
-//                            }
-//                            .padding()
-//                        }
-//                        .buttonStyle(.borderedProminent)
+                    HStack (spacing: 40){
+                        
+                        DatePicker(selection: $educationHistory.enterDate, displayedComponents: .date) {
+                            Text("입학년월")
+                                .foregroundColor(.primaryBlue)
+                                .font(Font.Job.title3)
+                        }
+                        .frame(width: 175)
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                        
+                        DatePicker(selection: $educationHistory.graduateDate, displayedComponents: .date) {
+                            Text("졸업년월")
+                                .foregroundColor(.primaryBlue)
+                                .font(Font.Job.title3)
+                        }
+                        .frame(width: 175)
                         
                     }
                 }
-                .zIndex(1)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 
-                
-                HStack (spacing: 40){
-                    HStack(spacing: 8) {
-                        HStack(spacing: 0) {
-                            Text("전공")
-                                .font(Font.Job.title3)
-                            Text("(고등학교 제외)")
-                                .font(Font.Job.headline1)
-                        }
-                        .foregroundColor(.primaryBlue)
-                        TextField("OOOOOO", text: $educationHistory.major)
-                            .font(Font.Job.headline2)
-                            .textFieldStyle(CustomTextFieldStyle())
-                    }
-                    
-                    HStack(spacing: 8) {
-                        HStack(spacing: 0) {
-                            Text("부전공")
-                                .font(Font.Job.title3)
-                            Text("(고등학교 제외)")
-                                .font(Font.Job.headline1)
-                        }
-                        .foregroundColor(.primaryBlue)
-                        
-                        TextField("OOOOOO", text: $educationHistory.minor)
-                            .font(Font.Job.headline2)
-                            .textFieldStyle(CustomTextFieldStyle())
-                    }
-                }
-                .frame(minWidth: 719)
-                
-                HStack (spacing: 40){
-                    
-                    DatePicker(selection: $educationHistory.enterDate, displayedComponents: .date) {
-                        Text("입학년월")
-                            .foregroundColor(.primaryBlue)
-                            .font(Font.Job.title3)
-                    }
-                    .frame(width: 175)
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                    
-                    DatePicker(selection: $educationHistory.graduateDate, displayedComponents: .date) {
-                        Text("졸업년월")
-                            .foregroundColor(.primaryBlue)
-                            .font(Font.Job.title3)
-                    }
-                    .frame(width: 175)
-                    
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            
-            HStack(spacing: 16) {
-                Button {
-                    dismiss()
-                } label: {
-                    Text("이전")
-                }
-                .disabled(true)
-                .buttonStyle(CustomButtonStyle(backgroundColor: .disabledButton))
-                
-                if #available(macOS 13.0, *) {
-                    NavigationLink(value: dataManager.careers) {
-                        Text("다음")
-                    }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                } else {
-                    NavigationLink {
-                        WriteCareerView(careerList: $dataManager.careers)
+                HStack(spacing: 16) {
+                    Button {
+                        dismiss()
                     } label: {
-                        Text("다음")
+                        Text("이전")
                     }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    .disabled(true)
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .disabledButton))
+                    
+                    if #available(macOS 13.0, *) {
+                        NavigationLink(value: dataManager.careers) {
+                            Text("다음")
+                        }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: checkDisabled() ? .disabledButton : .primaryBlue))
+                        .disabled(checkDisabled())
+                    } else {
+                        NavigationLink {
+                            WriteCareerView(careerList: $dataManager.careers)
+                        } label: {
+                            Text("다음")
+                        }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    }
                 }
             }
+            .padding(.horizontal, 80)
+            .padding(.vertical, 63)
         }
-        .padding(.horizontal, 80)
-        .padding(.vertical, 63)
+    }
+    func checkDisabled() -> Bool {
+        return dataManager.educationHistory.educationType.isEmpty ||
+        dataManager.educationHistory.location.isEmpty ||
+        dataManager.educationHistory.name.isEmpty
     }
 }

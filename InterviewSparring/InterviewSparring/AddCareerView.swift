@@ -91,9 +91,13 @@ struct AddCareerView: View {
                             .font(.Job.title3)
                             .foregroundColor(.primaryBlue)
                         Button {
-                            career.isResignate.toggle()
+                            withAnimation {
+                                career.isResignate.toggle()
+                            }
                         } label: {
                             Image(career.isResignate ? "check" : "unCheck")
+                                .resizable()
+                                .frame(width: 48, height: 48)
                         }
                         .buttonStyle(.borderless)
                     }
@@ -130,15 +134,22 @@ struct AddCareerView: View {
                 } label: {
                     Text("등록")
                 }
-                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                .buttonStyle(CustomButtonStyle(backgroundColor: checkDisabled() ? .disabledButton : .primaryBlue))
+                .disabled(checkDisabled())
                 
             }
-            
-            
             .padding(EdgeInsets(top: 0, leading: 161, bottom: 64, trailing: 161))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(minWidth: 1107, minHeight: 613)
         .background(Color.blueBackground)
+    }
+    
+    func checkDisabled() -> Bool {
+        return career.employmentForm.isEmpty ||
+        career.firm.isEmpty ||
+        career.department.isEmpty ||
+        career.position.isEmpty ||
+        career.details.isEmpty
     }
 }
