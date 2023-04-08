@@ -43,9 +43,6 @@ struct CircleStyle: ButtonStyle {
                 .font(.system(size: 20))
                 .padding(20)
                 .foregroundColor(Color.primaryBlue)
-//                .frame(width: 500, height: 30)
-                
-            
             
         }
     }
@@ -70,7 +67,7 @@ struct ExpectedQuestion: View {
     var body: some View {
         
         VStack (alignment: .center){
-            QuestionList()
+            QuestionList(isPressed: $isPressed)
     
             Button(action : {
                 isPressed.toggle()
