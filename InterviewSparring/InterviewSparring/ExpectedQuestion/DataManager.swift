@@ -10,7 +10,7 @@ import SwiftUI
 
 class DataManager: ObservableObject {
     @Published var educationHistory = EducationHistory(educationType: "", location: "", name: "", major: "", minor: "", enterDate: Date(), graduateDate: Date())
-    @Published var careers = [[Career]](repeating: [Career](), count: 1)
+    @Published var careers = [[Career]](repeating: [Career(employmentForm: "", firm: "", department: "", period: "", isResignate: false, position: "", details: "")], count: 1)
     @Published var qualification = Qualification(name: "", grade: "", getDate: Date(), authority: "")
     @Published var language = Language(language: "", name: "", grade: "", score: "", getDate: Date(), authority: "")
     
