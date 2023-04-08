@@ -7,12 +7,14 @@
 
 import Foundation
 import OpenAISwift
+import SwiftUI
 
 struct APIKey: Codable {
     let apiKey: String
 }
 
 final class OpenAPIViewModel: ObservableObject {
+    @EnvironmentObject var dataManager: DataManager
     @Published var isLoading: Bool = false
     @Published var resultTexts: [String] = []
     @Published var questionText: String = ""
@@ -36,6 +38,24 @@ final class OpenAPIViewModel: ObservableObject {
     }
     
     func submitQuestion() {
+        questionText.append("\n\n이 이력서 내용을 바탕으로'요'자로 끝나는 면접 질문 4개를 각각 세미콜론로 구분해서 대괄호 안에 넣어줘.")
+        guard !questionText.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        
+        isLoading = true
+        
+        fetchAnswer(text: questionText) { responseTexts in
+            DispatchQueue.main.async {
+                self.resultTexts = responseTexts
+                self.questionText = ""
+                self.isLoading = false
+            }
+        }
+    }
+    
+    func summarizeAnswer() {
+        questionText.append("\n\n위 문장들을 250자로 요약한 결과물을 대괄호 안에 넣어줘")
         guard !questionText.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }

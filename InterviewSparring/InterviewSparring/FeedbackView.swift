@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FeedbackView: View {
+    @EnvironmentObject var dataManager: DataManager
     
-    @State var question = "iOS 앱의 생명주기(Lifecycle)에 대해 설명해주세요.\n어떤 상태가 있고, 각 상태에서 어떤 메소드가 호출되는지 예를 들어주세요.\niOS 앱의 생명주기(Lifecycle)에 대해 설명해주세요.\n어떤 상태가 있고, 각 상태에서 어떤 메소드가 호출되는지 예를 들어주세요.\niOS 앱의 생명주기(Lifecycle)에 대해 설명해주세요.\n어떤 상태가 있고, 각 상태에서 어떤 메소드가 호출되는지 예를 들어주세요."
     @State var index = 0
     @State var screenHeight:CGFloat = 0
+    
+    @State var isShowSummary = false
     var body: some View {
         ZStack {
             Color.blueBackground
@@ -25,7 +27,7 @@ struct FeedbackView: View {
                         .foregroundColor(.primaryBlue)
                     Spacer()
                     Button {
-                        print("요약보기")
+                        isShowSummary.toggle()
                     } label: {
                         Text("요약 보기")
                             .underline()
@@ -38,7 +40,7 @@ struct FeedbackView: View {
                 
                 ZStack(alignment: .topTrailing) {
                     ScrollView {
-                        Text(question)
+                        Text(dataManager.interviewQuestion[index])
                             .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: true, vertical: false)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -49,10 +51,8 @@ struct FeedbackView: View {
                         .padding(.top, 13)
                         .padding(.trailing, 17)
                 }
-                .frame(maxWidth: .infinity, maxHeight: screenHeight/7)
-
+                .frame(maxWidth: .infinity, maxHeight: 110)
                 .foregroundColor(.white)
-                
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .foregroundColor(.primaryBlue)
@@ -62,39 +62,9 @@ struct FeedbackView: View {
                 
                 //답변과 피드백 구역
                 HStack(spacing: 32) {
-                    VStack(alignment: .leading, spacing: 16){
-                        Text("제출된 답변")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.primaryBlue)
-                        
-                        ScrollView {
-                            Text("testsetstesttestsetstes")
-                                .font(.system(size: 17, weight: .regular))
-                                .padding(EdgeInsets(top: 20, leading: 28, bottom: 20, trailing: 28))
-                                .lineSpacing(5)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        }
-                        .frame(minWidth: 524, maxWidth: .infinity, minHeight: 315, maxHeight: .infinity, alignment: .leading)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                    }
+                    FeedbackContentView(title: "제출된 답변", content: dataManager.interviewAnswer[index])
                     
-                    VStack(alignment: .leading, spacing: 16){
-                        Text("피드백")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.primaryBlue)
-                        
-                        ScrollView {
-                            Text("답변의 전체적인 구조와 내용은 좋습니다. 앱의 생명주기와 Scene의 상태를 잘 설명하셨습니다. \n답변의 시작 부분에서 iOS 13부터 Scene이 도입되었다고 언급하셨는데, 이전 버전에서는 앱의 생명주기가 어떻게 다른지도 추가하면 좋을 것 같습니다. 예를 들어, iOS 12 이하에서는 앱 전체가 하나의 Scene으로 취급되고, 앱 델리게이트에서 생명주기 이벤트를 처리한다고 말할 수 있습니다.\n\n답변의 마지막 부분에서 Suspended 상태에 대해 설명하실 때, 시스템이 임의로 Background 상태의 앱을 Suspended로답변의 전체적인 구조와 내용은 좋습니다. 앱의 생명주기와 Scene의 상태를 잘 설명하셨습니다. \n답변의 시작 부분에서 iOS 13부터 Scene이 도입되었다고 언급하셨는데, 이전 버전에서는 앱의 생명주기가 어떻게 다른지도 추가하면 좋을 것 같습니다. 예를 들어, iOS 12 이하에서는 앱 전체가 하나의 Scene으로 취급되고, 앱 델리게이트에서 생명주기 이벤트를 처리한다고 말할 수 있습니다.\n\n답변의 마지막 부분에서 Suspended 상태에 대해 설명하실 때, 시스템이 임의로 Background 상태의 앱을 Suspended로")
-                                .font(.system(size: 17, weight: .regular))
-                                .padding(EdgeInsets(top: 20, leading: 28, bottom: 20, trailing: 28))
-                                .lineSpacing(5)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        }
-                        .frame(minWidth: 524, maxWidth: .infinity, minHeight: 315, maxHeight: .infinity, alignment: .leading)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                    }
+                    FeedbackContentView(title: "피드백", content: dataManager.interviewFeedback[index])
                 }
                 .padding(.bottom, 40)
                 
@@ -105,7 +75,11 @@ struct FeedbackView: View {
                         Spacer()
                         
                         Button {
-                            print("이전 질문")
+                            if index <= 0 {
+                                
+                            } else {
+                                index = index - 1
+                            }
                         } label: {
                             Text("이전 질문")
                         }
@@ -114,23 +88,49 @@ struct FeedbackView: View {
                     
                     HStack {
                         Button {
-                            print("다음 질문")
+                            if index >= 3 {
+                                
+                            } else {
+                                index = index + 1
+                            }
                         } label: {
                             Text("다음 질문")
                         }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: index == 3 ? .gray : .primaryBlue))
                         Spacer()
                         Button {
-                            print("홈으로")
                         } label: {
                             Text("홈으로")
                         }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 }
                 
             }
             .padding(EdgeInsets(top: 58, leading: 80, bottom: 64, trailing: 80))
-        .frame(minWidth: 1240, minHeight: 776)
+        }
+    }
+}
+
+struct FeedbackContentView: View {
+    let title: String
+    let content: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16){
+            Text(title)
+                .font(.system(size: 20, weight: .bold))
+                .foregroundColor(.primaryBlue)
+            
+            ScrollView {
+                Text(content)
+                    .font(.system(size: 17, weight: .regular))
+                    .padding(EdgeInsets(top: 20, leading: 28, bottom: 20, trailing: 28))
+                    .lineSpacing(5)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            }
+            .background(Color.white)
+            .cornerRadius(8)
         }
     }
 }
