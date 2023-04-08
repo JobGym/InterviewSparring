@@ -19,8 +19,7 @@ struct InterviewSparringApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SummaryResultView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            StartView()
                 .environmentObject(dataManager)
         }
     }
