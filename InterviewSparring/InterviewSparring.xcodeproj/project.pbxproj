@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20939DEB29E13DB800983B9B /* properties.json in Resources */ = {isa = PBXBuildFile; fileRef = 20939DEA29E13DB800983B9B /* properties.json */; };
+		20939DED29E13DF500983B9B /* OpenAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */; };
+		20939DEF29E13E1600983B9B /* SpeechToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */; };
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3A79029E02DD900487FA6 /* JobQuestion.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20939DEA29E13DB800983B9B /* properties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = properties.json; sourceTree = "<group>"; };
+		20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIViewModel.swift; sourceTree = "<group>"; };
+		20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewModel.swift; sourceTree = "<group>"; };
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC3A79029E02DD900487FA6 /* JobQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQuestion.swift; sourceTree = "<group>"; };
@@ -91,6 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20939DE829E13D8700983B9B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */,
+				20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		20939DE929E13D9B00983B9B /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				20939DEA29E13DB800983B9B /* properties.json */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
 		2A0DE1CB29D8A14700E931B4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,8 +139,8 @@
 				2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */,
 			);
 			path = CoverLetter;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		F947960529DD932400DD4848 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,10 +171,10 @@
 		F9B91C8629D2EF04006F5688 /* InterviewSparring */ = {
 			isa = PBXGroup;
 			children = (
+				20939DE929E13D9B00983B9B /* Properties */,
+				20939DE829E13D8700983B9B /* ViewModel */,
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
-				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
 				2AC3A79029E02DD900487FA6 /* JobQuestion.swift */,
-				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				2AC921BA29DD1ECA005B39FD /* CoverLetter */,
 				F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */,
@@ -256,6 +279,7 @@
 				F9B91C8F29D2EF05006F5688 /* Preview Assets.xcassets in Resources */,
 				F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */,
 				F9ED3CFF29DC7406008B1473 /* Noto_Sans_KR in Resources */,
+				20939DEB29E13DB800983B9B /* properties.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +297,8 @@
 				F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */,
+				20939DED29E13DF500983B9B /* OpenAPIViewModel.swift in Sources */,
+				20939DEF29E13E1600983B9B /* SpeechToTextViewModel.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
 				2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
