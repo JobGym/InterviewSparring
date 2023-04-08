@@ -12,6 +12,7 @@ struct CoverletterList: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var openAPIViewModel = OpenAPIViewModel()
+    @ObservedObject var speechToTextViewModel = SpeechToTextViewModel()
     
     @State var index = 0
     @State var isDoneAll = false
@@ -22,13 +23,13 @@ struct CoverletterList: View {
     
     var body: some View {
         ZStack{
-            NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel), isActive: $isDoneAll)
+            NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel, speechToTextViewModel: speechToTextViewModel), isActive: $isDoneAll)
             
             if openAPIViewModel.isLoading {
+                if !isDoneAll{
                 LoadingView()
                     .onDisappear {
-                        if index <= 3 {
-                            if !isDoneAll{
+                            if index <= 3 {
                                 dataManager.queryString.append(openAPIViewModel.resultTexts[1])
                             }
                         }
@@ -145,11 +146,7 @@ struct CoverletterList: View {
                                         //                                    }
                                         // 제출하기 버튼
                                         Button {
-                                            openAPIViewModel.questionText = dataManager.jobAnswer[index]
-                                            openAPIViewModel.summarizeAnswer()
-                                            
                                             isDoneAll = true
-                                            
                                             openAPIViewModel.questionText = dataManager.queryString
                                             openAPIViewModel.submitQuestion()
                                             
