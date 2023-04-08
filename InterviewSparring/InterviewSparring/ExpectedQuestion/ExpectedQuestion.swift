@@ -70,41 +70,50 @@ struct ExpectedQuestion: View {
     @State var recordCount = 0 //n번째 녹음
     @State var questionCount = 1 //n번째 질문
     
+    @State var isDoneAll = false
     
     var body: some View {
 
-        if openAPIViewModel.isLoading {
-            LoadingView()
-                .onDisappear{
-                    dataManager.interviewQuestion = openAPIViewModel.resultTexts
-                }
-        }
-        else{
-            VStack (alignment: .center){
-                QuestionList(isPressed: $isPressed, questionCount: $questionCount, recordCount: $recordCount)
-                
-                Button(action : {
-                    isPressed.toggle()
-                    
-                    if(isPressed == true){
-                        recordCount = recordCount + 1
+        ZStack {
+            NavigationLink("", destination: FeedbackView(), isActive: $isDoneAll)
+            if openAPIViewModel.isLoading {
+                LoadingView()
+                    .onDisappear{
+                        dataManager.interviewQuestion = openAPIViewModel.resultTexts
                     }
-                    else{
-                        questionCount = questionCount + 1
-                    }
+            }
+            else{
+                VStack (alignment: .center){
+                    QuestionList(isPressed: $isPressed, questionCount: $questionCount, recordCount: $recordCount)
                     
-                    speechToTextViewModel.startRecording()
-                }){
+                    Button(action : {
+                        isPressed.toggle()
+                        
+                        if(isPressed == true){
+                            //녹음 시작
+                            recordCount = recordCount + 1
+                        }
+                        else{
+                            //녹음 끝
+                            questionCount = questionCount + 1
+                            if questionCount > 4 {
+                                isDoneAll.toggle()
+                            }
+                        }
+                        
+                        speechToTextViewModel.startRecording()
+                    }){
+                        
+                    }
+                    .buttonStyle(CircleStyle(isPressed: $isPressed))
+                    .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
+                    //            .frame(width: 160, height: 160)
+                    
                     
                 }
-                .buttonStyle(CircleStyle(isPressed: $isPressed))
-                .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
-                //            .frame(width: 160, height: 160)
-                
                 
             }
-            .background(Color.blueBackground)
-        }
+        }.background(Color.blueBackground)
     }
 }
 
