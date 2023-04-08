@@ -17,14 +17,14 @@ struct CircleStyle: ButtonStyle {
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         VStack{
             ZStack{
-                Circle()
+                Circle() //가장 바깥 원
                     .fill(Color.primaryBlue)
                     .opacity(0.10)
                     .scaleEffect(isPressed ? 1.5 : 1)
                     .animation(isPressed ? .easeInOut(duration: 1).repeatForever() : nil)
                     .frame(width: 160, height: 160)
                 
-                Circle()
+                Circle() //중간 원
                     .fill(Color.primaryBlue)
                     .opacity(0.20)
                     .scaleEffect(isPressed ? 1.25 : 1)
@@ -32,7 +32,7 @@ struct CircleStyle: ButtonStyle {
                     .frame(width: 160, height: 160)
                 
                 
-                Circle()
+                Circle() //마이크 이미지 버튼
                     .fill(Color.primaryBlue)
                     .overlay(
                         Image(isPressed ? "stop" :"microphone")
@@ -43,9 +43,6 @@ struct CircleStyle: ButtonStyle {
                 .font(.system(size: 20))
                 .padding(20)
                 .foregroundColor(Color.primaryBlue)
-//                .frame(width: 500, height: 30)
-                
-            
             
         }
     }
@@ -60,31 +57,50 @@ struct RecordStyle: ButtonStyle {
             
             RoundedRectangle(cornerRadius: 30)
                 .fill(Color.white)
-//                .frame(width: 130, height: 130)
         }
     }
 }
 struct ExpectedQuestion: View {
     @State var isPressed = false
+    @State var questionCount = 0 // 예상질문번호 넘버링
+    @State var quitRecordCount = 0 //녹음 완료 횟수 카운드
     
     var body: some View {
-        
-        VStack (alignment: .center){
-            QuestionList()
-    
-            Button(action : {
-                isPressed.toggle()
-            }){
-        
+        GeometryReader { screen in
+            VStack (alignment: .center){
+                QuestionList(isPressed: $isPressed, questionCount: $questionCount)
+                
+                Button(action : {
+                    isPressed.toggle()
+                    //음성녹음 버튼 press시 질문 넘버링 증가
+                    if(isPressed == true){
+                        if(questionCount <= 4){ //4번째 질문 카운트까지 넘버링 증가
+                            questionCount = questionCount + 1
+                        }
+                        else { //질문 카운트가 4 초과하는 경우
+                            questionCount = 4
+                        }
+                    }
+                    else{
+                        quitRecordCount = quitRecordCount + 1
+                        
+                        if(quitRecordCount == 4){
+                            // 피드백 생성 로딩화면으로 이동
+                        }
+                        
+                    }
+                    
+                }){
+                    
+                }
+                .buttonStyle(CircleStyle(isPressed: $isPressed))
+                .padding(EdgeInsets(top: screen.size.height*0.2, leading: 0, bottom: screen.size.height*0.025, trailing: 0))
+                
+                
+                
             }
-            .buttonStyle(CircleStyle(isPressed: $isPressed))
-            .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
-//            .frame(width: 160, height: 160)
-            
-            
-            
+            .background(Color.blueBackground)
         }
-        .background(Color.blueBackground)
     }
 }
 
