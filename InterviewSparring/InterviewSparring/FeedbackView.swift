@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AppKit
 
 struct FeedbackView: View {
     
@@ -33,7 +32,6 @@ struct FeedbackView: View {
                             .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.blue)
                     }
-                    .buttonStyle(.link)
 
                 }
                 .padding(.bottom, 16)
@@ -133,14 +131,6 @@ struct FeedbackView: View {
             }
             .padding(EdgeInsets(top: 58, leading: 80, bottom: 64, trailing: 80))
         .frame(minWidth: 1240, minHeight: 776)
-        }
-        .onAppear() {
-            if let screen = NSScreen.main {
-                let rect = screen.frame
-                let height = rect.size.height
-                
-                self.screenHeight = height
-            }
         }
     }
 }

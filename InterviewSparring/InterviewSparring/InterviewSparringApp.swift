@@ -15,10 +15,13 @@ struct InterviewSparringApp: App {
             UINavigationBar.setAnimationsEnabled(false)
         }
     
+    @StateObject var dataManager = DataManager()
+    
     var body: some Scene {
         WindowGroup {
-            FeedbackView()
+            StartView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(dataManager)
         }
     }
 }
