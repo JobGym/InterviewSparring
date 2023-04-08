@@ -51,9 +51,6 @@ struct StartView: View {
                     .navigationDestination(for: [String].self) { _ in
                         CoverletterList()
                     }
-                    .navigationDestination(for: Int.self) { _ in
-                        ExpectedQuestion()
-                    }
                 }
                 .background(Color.blueBackground)
             }
