@@ -43,9 +43,6 @@ struct CircleStyle: ButtonStyle {
                 .font(.system(size: 20))
                 .padding(20)
                 .foregroundColor(Color.primaryBlue)
-//                .frame(width: 500, height: 30)
-                
-            
             
         }
     }
@@ -70,6 +67,7 @@ struct ExpectedQuestion: View {
     @State var isPressed = false
     
     var body: some View {
+
         if openAPIViewModel.isLoading {
             LoadingView()
         }
@@ -85,7 +83,6 @@ struct ExpectedQuestion: View {
                 .buttonStyle(CircleStyle(isPressed: $isPressed))
                 .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
                 //            .frame(width: 160, height: 160)
-                
                 
                 
             }
