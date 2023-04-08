@@ -138,11 +138,13 @@ struct CoverletterList: View {
                             }
                             Spacer()
                         }
+                        .padding(.bottom, 63)
                     }
                     .padding(.horizontal, 40)
                 }
             }
         }
+        .ignoresSafeArea()
         .background(Color.blueBackground)
         .navigationBarHidden(true)
     }
