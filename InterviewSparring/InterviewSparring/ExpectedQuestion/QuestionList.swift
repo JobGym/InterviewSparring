@@ -12,13 +12,15 @@ import SwiftUI
 
 struct QuestionList: View {
     @EnvironmentObject var dataManager: DataManager
+    @Binding var isPressed : Bool
     var body: some View {
         
         GeometryReader { screen in
         VStack(alignment: .leading){
             
+            //마지막 질문일 경우에 "다음질문" 말고 "결과화면"으로 이동하라고 고쳐야함.
             //Text ("답변이 완료되었다면 \n정지 버튼을 누르고 결과 화면으로 이동하세요.")
-            Text("예상 면접 질문입니다. \n마이크를 통해 답변해보세요")
+            Text(isPressed ? "답변이 완료되었다면 \n정지 버튼을 누르고 다음 질문으로 이동하세요." : "예상 면접 질문입니다. \n마이크를 통해 답변해보세요.")
                 .padding(EdgeInsets(top: 60, leading: 50, bottom: 0, trailing: 30))
                 .foregroundColor(Color.primaryBlue)
                 .font(.system(size: 32, weight: .bold))
@@ -61,6 +63,6 @@ struct QuestionList: View {
 
 struct QuestionList_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionList()
+        QuestionList(isPressed: .constant(false))
     }
 }
