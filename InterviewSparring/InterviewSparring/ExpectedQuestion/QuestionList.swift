@@ -13,6 +13,23 @@ import SwiftUI
 struct QuestionList: View {
     @EnvironmentObject var dataManager: DataManager
     @Binding var isPressed : Bool
+    @Binding var questionCount : Int
+    @Binding var recordCount : Int
+    
+    func CountQuestion(isPressed: Bool, questionCount : Int) -> String {
+        if isPressed {
+            if (questionCount < 4){
+                return "답변이 완료되었다면 \n정지 버튼을 누르고 다음 질문으로 이동하세요."
+            }
+            else{
+                return "답변이 완료되었다면 \n정지 버튼을 누르고 결과 화면으로 이동하세요."
+            }
+        }
+        else {
+            return("예상 질문입니다. \n마이크를 통해 답변해 보세요. ")
+        }
+    }
+    
     var body: some View {
         
         GeometryReader { screen in
@@ -20,7 +37,7 @@ struct QuestionList: View {
             
             //마지막 질문일 경우에 "다음질문" 말고 "결과화면"으로 이동하라고 고쳐야함.
             //Text ("답변이 완료되었다면 \n정지 버튼을 누르고 결과 화면으로 이동하세요.")
-            Text(isPressed ? "답변이 완료되었다면 \n정지 버튼을 누르고 다음 질문으로 이동하세요." : "예상 면접 질문입니다. \n마이크를 통해 답변해보세요.")
+            Text(CountQuestion(isPressed: isPressed, questionCount: questionCount))
                 .padding(EdgeInsets(top: 60, leading: 50, bottom: 0, trailing: 30))
                 .foregroundColor(Color.primaryBlue)
                 .font(.system(size: 32, weight: .bold))
@@ -51,7 +68,7 @@ struct QuestionList: View {
                         }
                     }
                     
-                    Text("1/4") // 질문에 따라 숫자 변경
+                    Text("\(questionCount)/4") // 질문에 따라 숫자 변경
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(Color.white)
                         .padding(EdgeInsets(top: -65, leading: 0, bottom: 10, trailing: 60))
@@ -61,8 +78,11 @@ struct QuestionList: View {
     }
 }
 
-struct QuestionList_Previews: PreviewProvider {
-    static var previews: some View {
-        QuestionList(isPressed: .constant(false))
-    }
-}
+
+/*
+ struct QuestionList_Previews: PreviewProvider {
+ static var previews: some View {
+ QuestionList(isPressed: .constant(false))
+ }
+ }
+ */

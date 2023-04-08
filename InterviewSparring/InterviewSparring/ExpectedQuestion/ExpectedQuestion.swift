@@ -65,7 +65,11 @@ struct ExpectedQuestion: View {
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var openAPIViewModel: OpenAPIViewModel
     @ObservedObject var speechToTextViewModel: SpeechToTextViewModel
+    
     @State var isPressed = false
+    @State var recordCount = 0 //n번째 녹음
+    @State var questionCount = 1 //n번째 질문
+    
     
     var body: some View {
 
@@ -77,10 +81,18 @@ struct ExpectedQuestion: View {
         }
         else{
             VStack (alignment: .center){
-                QuestionList()
+                QuestionList(isPressed: $isPressed, questionCount: $questionCount, recordCount: $recordCount)
                 
                 Button(action : {
                     isPressed.toggle()
+                    
+                    if(isPressed == true){
+                        recordCount = recordCount + 1
+                    }
+                    else{
+                        questionCount = questionCount + 1
+                    }
+                    
                     speechToTextViewModel.startRecording()
                 }){
                     
