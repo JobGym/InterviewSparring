@@ -96,9 +96,12 @@ struct ExpectedQuestion: View {
                         }
                         else{
                             //녹음 끝
-                            questionCount = questionCount + 1
-                            if questionCount > 4 {
+                            if recordCount == 4 {
                                 isDoneAll.toggle()
+                                questionCount = 4
+                            }
+                            else {
+                                questionCount = questionCount + 1
                             }
                         }
                        

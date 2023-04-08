@@ -16,9 +16,11 @@ struct QuestionList: View {
     @Binding var questionCount : Int
     @Binding var recordCount : Int
     
+    
     func CountQuestion(isPressed: Bool, questionCount : Int) -> String {
+        
         if isPressed {
-            if (questionCount < 4){
+            if (questionCount < 3){
                 return "답변이 완료되었다면 \n정지 버튼을 누르고 다음 질문으로 이동하세요."
             }
             else{
@@ -41,7 +43,7 @@ struct QuestionList: View {
                 .padding(EdgeInsets(top: 60, leading: 50, bottom: 0, trailing: 30))
                 .foregroundColor(Color.primaryBlue)
                 .font(.system(size: 32, weight: .bold))
-                .frame(height: screen.size.height * 0.25)
+                .frame(height: screen.size.height * 0.3)
             
                 ZStack (alignment: .trailing){
                     ZStack (alignment: .leading){
@@ -60,8 +62,9 @@ struct QuestionList: View {
                                 .padding(EdgeInsets(top: 10, leading: 80, bottom: 10, trailing: 30))
                             
                             
+                           
                             //생성된 질문으로 교체
-                            Text(dataManager.interviewQuestion[questionCount])
+                            Text(dataManager.interviewQuestion[questionCount] )
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(Color.white)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
