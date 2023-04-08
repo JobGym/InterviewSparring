@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct CoverletterList: View {
-    @State var statement: String = "" //답변 textfield
-    //@Binding var jobSelection : String
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataManager: DataManager
     
-    
+    @State var index = 0
+    @State var isDoneAll = false
     
     var body: some View {
         
@@ -44,7 +45,7 @@ struct CoverletterList: View {
                             
                             VStack (alignment: .leading){
                                 //자소서 항목 질문 1~4
-                                Text("질문질문")
+                                Text(dataManager.jobQuestion[index])
                                     .font(.title3)
                                     .foregroundColor(Color.primaryBlue)
                                     .frame(maxHeight: screen.size.height*0.08)
@@ -57,7 +58,7 @@ struct CoverletterList: View {
                                         .padding(.bottom, 10)
                                     
                                     //Text 입력 창
-                                    TextEditor(text: $statement)
+                                    TextEditor(text: $dataManager.jobAnswer[index])
                                         .cornerRadius(15)
                                         .frame(width: screen.size.width*0.8, height: screen.size.height*0.6)
                                         //.background(Color.lightGray)
@@ -68,36 +69,47 @@ struct CoverletterList: View {
                         }
                         .padding()
                         
-                        HStack {
-                            //하단의 이전, 다음 버튼
+                        
+                        HStack(spacing: 16) {
                             
                             Button {
-                                    
-                                } label: {
-                                    Text("이전")
-                                        .font(.system(size: 20))
-                                        .padding(.horizontal, 35)
-                                        .frame(height: 44)
-                                        .foregroundColor(Color.white)
-                                        .background(Capsule().fill(Color.primaryBlue))
-                                        
+                                if index <= 0 {
+                                    dismiss()
+                                } else {
+                                    index = index - 1
                                 }
-                           
+                            } label: {
+                                Text("이전")
+                            }
+                            .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                             
-                            Button {
-                                    
+                            
+                            
+                            if index >= 3 {
+                                
+                                if #available(iOS 16.0, *) {
+                                    NavigationLink(value: 0) {
+                                        Text("다음")
+                                    }
+                                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                                } else {
+                                    NavigationLink {
+                                        ExpectedQuestion()
+                                    } label: {
+                                        Text("다음")
+                                    }
+                                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                                }
+                            } else {
+                                Button {
+                                    index = index + 1
                                 } label: {
                                     Text("다음")
-                                        .font(.system(size: 20))
-                                        .padding(.horizontal, 35)
-                                        .frame(height: 44)
-                                        .foregroundColor(Color.white)
-                                        .background(Capsule().fill(Color.primaryBlue))
-                                        
                                 }
-                        
-                        }
+                                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                            }
 
+                        }
                     }
                     
                 }

@@ -45,6 +45,15 @@ struct StartView: View {
                     .navigationDestination(for: Language.self) { _ in
                         WriteLanguageView(language: $dataManager.language)
                     }
+                    .navigationDestination(for: JobQuestion.self) { _ in
+                        CoverletterView()
+                    }
+                    .navigationDestination(for: [String].self) { _ in
+                        CoverletterList()
+                    }
+                    .navigationDestination(for: Int.self) { _ in
+                        ExpectedQuestion()
+                    }
                 }
                 .background(Color.blueBackground)
             }

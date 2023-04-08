@@ -13,4 +13,8 @@ class DataManager: ObservableObject {
     @Published var careers = [[Career]](repeating: [Career](), count: 1)
     @Published var qualification = Qualification(name: "", grade: "", getDate: Date(), authority: "")
     @Published var language = Language(language: "", name: "", grade: "", score: "", getDate: Date(), authority: "")
+    
+    @Published var jobSelection = JobQuestion.none
+    @Published var jobQuestion = [String]()
+    @Published var jobAnswer = [String](repeating: "", count: 4)
 }
