@@ -27,7 +27,7 @@ struct WriteQualificationView: View {
     
     var body: some View {
         ZStack(alignment: .trailing) {
-            ProgressView(value: 206)
+            ProgressView(value: 3)
             VStack(spacing: 140) {
                 
                 VStack(alignment: .leading, spacing: 0) {

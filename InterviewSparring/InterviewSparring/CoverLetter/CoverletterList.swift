@@ -20,9 +20,13 @@ struct CoverletterList: View {
     @State private var wordCount: Int = 0
     @State private var lastText = ""
     
+    let screen = UIScreen.main.bounds
+    
     var body: some View {
         ZStack{
             NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel), isActive: $isDoneAll)
+            
+            ProgressView(value: 6 + CGFloat(index))
             
             if openAPIViewModel.isLoading {
                 LoadingView()
@@ -35,149 +39,120 @@ struct CoverletterList: View {
                     }
             }
             else {
-                GeometryReader { screen in
-                    
-                    HStack { //가장 우측 프로그레스 바 추가 예정
+                HStack { //가장 우측 프로그레스 바 추가 예정
+                    VStack (alignment: .leading){
+                        //프로그레스 바 제외 모든 요소의 정렬
+                        
+                        //페이지 타이틀
                         VStack (alignment: .leading){
-                            //프로그레스 바 제외 모든 요소의 정렬
+                            Text("자소서 제출")
+                                .font(.system(size: 32, weight: .bold))
+                            Text("내용 작성")
+                                .font(.system(size: 20, weight: .medium))
+                        }
+                        .foregroundColor(Color.primaryBlue)
+                        .padding(.top, 63)
+                        
+                        
+                        VStack{
+                            ZStack{
+                                VStack (alignment: .leading){
+                                    //자소서 항목 질문 1~4
+                                    ScrollView {
+                                        Text(dataManager.jobQuestion[index])
+                                            .font(.system(size: 20, weight: .bold))
+                                            .foregroundColor(Color.primaryBlue)
+                                            .padding(.top, 10)
+                                    }
+                                    .frame(height: 100)
                             
-                            //페이지 타이틀
-                            VStack (alignment: .leading){
-                                Text("자소서 제출")
-                                    .font(.system(size: 32, weight: .bold))
-                                Text("내용 작성")
-                                    .font(.system(size: 20, weight: .medium))
-                            }
-                            .foregroundColor(Color.primaryBlue)
-                            .padding(EdgeInsets(top: screen.size.height*0.025, leading: screen.size.width*0.05, bottom: 20, trailing: 30))
+                                    //VStack (alignment: .center){
                             
+                                    Divider()
+                                        .frame(width: screen.size.width*0.8)
+                                        .background(Color.blue)
+                                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             
-                            VStack{
-                                ZStack{
+                                    //Text 입력 창
+                                    // $dataManager.jobAnswer[index]
+                                    TextEditor(text: $dataManager.jobAnswer[index])
+                                        .onChange(of: dataManager.jobAnswer[index]){ text in
+                                          // let text = $statement
+                                            wordCount = text.count
                                     
-                                    //흰색 배경
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .fill(Color.white)
-                                        .frame(width: screen.size.width*0.9, height: screen.size.height*0.75)
-                                    
-                                    VStack (alignment: .leading){
-                                    
-        //이슈 11번 수정사항 시작 여기부터
-                                        //자소서 항목 질문 1~4
-                                        ScrollView {
-                                            Text(dataManager.jobQuestion[index])
-                                                .font(.system(size: 20, weight: .bold))
-                                                .foregroundColor(Color.primaryBlue)
-                                                .frame(maxWidth: screen.size.width*0.8, maxHeight: screen.size.height*0.3)
-                                        }
-                                        .padding(.top, screen.size.height*0.03)
-                                
-                                
-                                        //VStack (alignment: .center){
-                                
-                                        Divider()
-                                            .frame(width: screen.size.width*0.8)
-                                            .background(Color.blue)
-                                            .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                                
-                                        //Text 입력 창
-                                        // $dataManager.jobAnswer[index]
-                                        TextEditor(text: $dataManager.jobAnswer[index])
-                                            .onChange(of: dataManager.jobAnswer[index]){ text in
-                                              // let text = $statement
-                                                wordCount = text.count
-                                        
-                                                if wordCount <= 1000 {
-                                                    lastText = text
-                                                } else {
-                                                    self.dataManager.jobAnswer[index] = lastText
-                                                }
-                                        
+                                            if wordCount <= 1000 {
+                                                lastText = text
+                                            } else {
+                                                self.dataManager.jobAnswer[index] = lastText
                                             }
-                                            .cornerRadius(15)
-                                            .frame(width: screen.size.width*0.8, height: screen.size.height*0.5)
-                                            //.background(Color.lightGray)
-                                
-                                        Text("\(wordCount)/1000 ")
-                                            .font(.headline)
-                                            .foregroundColor(.secondary)
-                                            .padding(.leading)
-                                       //}
-   //이슈 11번 수정사항                                     
-                                    }
                                     
-                                }
-                                .padding()
-                                
-                                
-                                HStack(spacing: 16) {
-                                    
-                                    Button {
-                                        if index <= 0 {
-                                            dismiss()
-                                        } else {
-                                            index = index - 1
                                         }
-                                    } label: {
-                                        Text("이전")
-                                    }
-                                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                                    
-                                    
-                                    
-                                    if index >= 3 {
-                                        //                                    Button(action: {
-                                        //                                        selection = 0
-                                        //                                        openAPIViewModel.questionText = dataManager.jobAnswer[index]
-                                        //                                         openAPIViewModel.submitQuestion()
-                                        //                                        index += 1
-                                        //                                    }) {
-                                        //                                        Text("제출하기")
-                                        //                                            .padding()
-                                        //                                            .background(Color.primaryBlue)
-                                        //                                            .foregroundColor(.white)
-                                        //                                            .cornerRadius(10)
-                                        //                                    }
-                                        //                                    if #available(iOS 16.0, *) {
-                                        //                                        NavigationLink("", destination: ExpectedQuestion(), tag: 0, selection: $selection)
-                                        //                                    } else {
-                                        //                                        NavigationLink("", destination: ExpectedQuestion(), isActive: Binding.constant(selection == 0))
-                                        //                                    }
-                                        // 제출하기 버튼
-                                        Button {
-                                            openAPIViewModel.questionText = dataManager.jobAnswer[index]
-                                            openAPIViewModel.summarizeAnswer()
-                                            
-                                            isDoneAll = true
-                                            
-                                            openAPIViewModel.questionText = dataManager.queryString
-                                            openAPIViewModel.submitQuestion()
-                                            
-                                        } label: {
-                                            Text("제출하기")
-                                        }
-                                    } else {
-                                        // 0 1 2 인덱스 뷰 다음
-                                        Button {
-                                            openAPIViewModel.questionText = dataManager.jobAnswer[index]
-                                            openAPIViewModel.summarizeAnswer()
-                                            index += 1
-                                        } label: {
-                                            Text("다음 질문으로 넘어가기")
-                                        }
-                                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                                    }
-                                    
-                                }
-                            }
+                                        .cornerRadius(15)
+                                        .padding(30)
                             
+                                    Text("\(wordCount)/1000 ")
+                                        .font(.headline)
+                                        .foregroundColor(.secondary)
+                                        .padding(.leading)
+                                        .padding(.bottom, 20)
+                                }
+                                
+                            }
+                            .padding(.horizontal, 20)
+                        }
+                        .background(Color.white)
+                        .cornerRadius(15)
+                        
+                        HStack(spacing: 16) {
+                            
+                            Spacer()
+                            Button {
+                                if index <= 0 {
+                                    dismiss()
+                                } else {
+                                    index = index - 1
+                                }
+                            } label: {
+                                Text("이전")
+                            }
+                            .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                            
+                            
+                            
+                            if index >= 3 {
+                                // 제출하기 버튼
+                                Button {
+                                    openAPIViewModel.questionText = dataManager.jobAnswer[index]
+                                    openAPIViewModel.summarizeAnswer()
+                                    
+                                    isDoneAll = true
+                                    
+                                    openAPIViewModel.questionText = dataManager.queryString
+                                    openAPIViewModel.submitQuestion()
+                                    
+                                } label: {
+                                    Text("제출하기")
+                                }
+                            } else {
+                                // 0 1 2 인덱스 뷰 다음
+                                Button {
+                                    openAPIViewModel.questionText = dataManager.jobAnswer[index]
+                                    openAPIViewModel.summarizeAnswer()
+                                    index += 1
+                                } label: {
+                                    Text("다음 질문으로 넘어가기")
+                                }
+                                .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                            }
+                            Spacer()
                         }
                     }
-                    .frame(width: screen.size.width, height: screen.size.height)
+                    .padding(.horizontal, 40)
                 }
-                .background(Color.blueBackground)
             }
         }
+        .background(Color.blueBackground)
+        .navigationBarHidden(true)
     }
 }
 

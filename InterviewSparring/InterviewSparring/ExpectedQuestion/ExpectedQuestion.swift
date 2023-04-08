@@ -73,7 +73,7 @@ struct ExpectedQuestion: View {
         }
         else{
             VStack (alignment: .center){
-                QuestionList()
+                QuestionList(isPressed: $isPressed)
                 
                 Button(action : {
                     isPressed.toggle()
