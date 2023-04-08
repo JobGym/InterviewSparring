@@ -8,11 +8,12 @@
 import Foundation
 
 
-enum JobQuestion {
-    case developer
-    case designer
-    case projectManager
-    case researcher
+enum JobQuestion: String {
+    case none = ""
+    case developer = "개발자"
+    case designer = "디자이너"
+    case projectManager = "프로젝트매니저"
+    case researcher = "리서처"
     
     func fetchQuestion() -> [String] {
         switch self {
@@ -42,13 +43,13 @@ enum JobQuestion {
             
         case .researcher:
             return [
-                //explanation 추가
-                "사용자에 대한 인사이트를 얻고, 이를 효과적으로 적용한 사례를 알려주세요. ",
-                "1. 리서치를 통해 어떤 것을 알아보고 검증하고자 하셨나요?",
-                "2. 리서치 설계에 있어 가장 고민했던 점은 무엇인가요?",
-                "3. 리서치를 통해 새롭게 발견한 것은 무엇이었으며, 발견한 인사이트를 어떻게 적용했나요?",
-                "4. 인사이트가 의미가 있었나요? 그렇게 생각하는 이유는 무엇인가요? \n이 사례를 대표하는 경험을 작성해주세요(선택) \n리서치 과정 혹은 제품의 as-is, to-be를 확인할 수 있는 내용이라면 좋습니다."
+                "사용자에 대한 인사이트를 얻고, 이를 효과적으로 적용한 사례를 알려주세요. \n\n 1. 리서치를 통해 어떤 것을 알아보고 검증하고자 하셨나요?",
+                "사용자에 대한 인사이트를 얻고, 이를 효과적으로 적용한 사례를 알려주세요. \n\n 2. 리서치 설계에 있어 가장 고민했던 점은 무엇인가요?",
+                "사용자에 대한 인사이트를 얻고, 이를 효과적으로 적용한 사례를 알려주세요. \n\n 3. 리서치를 통해 새롭게 발견한 것은 무엇이었으며, 발견한 인사이트를 어떻게 적용했나요?",
+                "사용자에 대한 인사이트를 얻고, 이를 효과적으로 적용한 사례를 알려주세요. \n\n 4. 인사이트가 의미가 있었나요? 그렇게 생각하는 이유는 무엇인가요? \n이 사례를 대표하는 경험을 작성해주세요(선택) \n리서치 과정 혹은 제품의 as-is, to-be를 확인할 수 있는 내용이라면 좋습니다."
             ]
+        case .none:
+            return []
         }
     }
 }
