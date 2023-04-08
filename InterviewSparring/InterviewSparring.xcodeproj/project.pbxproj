@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
-		2A0DE1C429D8A13C00E931B4 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */; };
-		2A0DE1C529D8A13C00E931B4 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */; };
-		2A0DE1C629D8A13C00E931B4 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */; };
-		2A0DE1C729D8A13C00E931B4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C029D8A13C00E931B4 /* OFL.txt */; };
-		2A0DE1C829D8A13C00E931B4 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */; };
-		2A0DE1C929D8A13C00E931B4 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */; };
-		2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3A79029E02DD900487FA6 /* JobQuestion.swift */; };
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
 		2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921B829DC6838005B39FD /* CoverletterView.swift */; };
 		2AC921BC29DD1F4E005B39FD /* CoverletterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */; };
+		F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795F929DD765400DD4848 /* WriteQualificationView.swift */; };
+		F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */; };
+		F947960029DD92B200DD4848 /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FF29DD92B200DD4848 /* Career.swift */; };
+		F947960229DD930000DD4848 /* Qualification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947960129DD930000DD4848 /* Qualification.swift */; };
+		F947960429DD931D00DD4848 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947960329DD931D00DD4848 /* Language.swift */; };
+		F947960729DD94FE00DD4848 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F947960629DD94FE00DD4848 /* DataManager.swift */; };
+		F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */; };
 		F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
 		F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8929D2EF04006F5688 /* ContentView.swift */; };
 		F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8B29D2EF05006F5688 /* Assets.xcassets */; };
@@ -27,22 +27,35 @@
 		F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C9029D2EF05006F5688 /* Persistence.swift */; };
 		F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C9229D2EF05006F5688 /* InterviewSparring.xcdatamodeld */; };
 		F9B91C9D29D2EF5B006F5688 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = F9B91C9C29D2EF5B006F5688 /* OpenAISwift */; };
+		F9ED3CC429DC6590008B1473 /* WriteEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */; };
+		F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */; };
+		F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */; };
+		F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */; };
+		F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */; };
+		F9ED3CFF29DC7406008B1473 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */; };
+		F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0029DC748C008B1473 /* StartView.swift */; };
+		F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */; };
+		F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */; };
+		F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */; };
+		F9ED3D0929DC8314008B1473 /* WriteCareerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */; };
+		F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */; };
+		F9ED3D0D29DC8797008B1473 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
-		2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
-		2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		2A0DE1C029D8A13C00E931B4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
-		2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
-		2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC3A79029E02DD900487FA6 /* JobQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQuestion.swift; sourceTree = "<group>"; };
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		2AC921B829DC6838005B39FD /* CoverletterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverletterView.swift; sourceTree = "<group>"; };
 		2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverletterList.swift; sourceTree = "<group>"; };
+		F94795F929DD765400DD4848 /* WriteQualificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteQualificationView.swift; sourceTree = "<group>"; };
+		F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLanguageView.swift; sourceTree = "<group>"; };
+		F94795FF29DD92B200DD4848 /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
+		F947960129DD930000DD4848 /* Qualification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qualification.swift; sourceTree = "<group>"; };
+		F947960329DD931D00DD4848 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		F947960629DD94FE00DD4848 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSparringApp.swift; sourceTree = "<group>"; };
 		F9B91C8929D2EF04006F5688 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +64,19 @@
 		F9B91C9029D2EF05006F5688 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F9B91C9329D2EF05006F5688 /* InterviewSparring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InterviewSparring.xcdatamodel; sourceTree = "<group>"; };
 		F9B91C9529D2EF05006F5688 /* InterviewSparring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterviewSparring.entitlements; sourceTree = "<group>"; };
+		F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEducationView.swift; sourceTree = "<group>"; };
+		F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
+		F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerStyle.swift; sourceTree = "<group>"; };
+		F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
+		F9ED3D0029DC748C008B1473 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationHistory.swift; sourceTree = "<group>"; };
+		F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCareerView.swift; sourceTree = "<group>"; };
+		F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCareerView.swift; sourceTree = "<group>"; };
+		F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,24 +91,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A0DE1BC29D8A13C00E931B4 /* Noto_Sans_KR */ = {
-			isa = PBXGroup;
-			children = (
-				2A0DE1BD29D8A13C00E931B4 /* NotoSansKR-Light.otf */,
-				2A0DE1BE29D8A13C00E931B4 /* NotoSansKR-Bold.otf */,
-				2A0DE1BF29D8A13C00E931B4 /* NotoSansKR-Thin.otf */,
-				2A0DE1C029D8A13C00E931B4 /* OFL.txt */,
-				2A0DE1C129D8A13C00E931B4 /* NotoSansKR-Black.otf */,
-				2A0DE1C229D8A13C00E931B4 /* NotoSansKR-Medium.otf */,
-				2A0DE1C329D8A13C00E931B4 /* NotoSansKR-Regular.otf */,
-			);
-			path = Noto_Sans_KR;
-			sourceTree = "<group>";
-		};
 		2A0DE1CB29D8A14700E931B4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				2A0DE1BC29D8A13C00E931B4 /* Noto_Sans_KR */,
+				F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -92,6 +104,7 @@
 			children = (
 				2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */,
 				2AC9213429DAA932005B39FD /* QuestionList.swift */,
+				F947960629DD94FE00DD4848 /* DataManager.swift */,
 			);
 			path = ExpectedQuestion;
 			sourceTree = "<group>";
@@ -103,6 +116,17 @@
 				2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */,
 			);
 			path = CoverLetter;
+            sourceTree = "<group>";
+        };
+		F947960529DD932400DD4848 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F947960129DD930000DD4848 /* Qualification.swift */,
+				F94795FF29DD92B200DD4848 /* Career.swift */,
+				F9ED3D0629DC7F3A008B1473 /* EducationHistory.swift */,
+				F947960329DD931D00DD4848 /* Language.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F9B91C7B29D2EF04006F5688 = {
@@ -130,12 +154,29 @@
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				2AC921BA29DD1ECA005B39FD /* CoverLetter */,
+				F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */,
+				F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */,
+				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
+				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
+				F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */,
+				F9ED3D0C29DC8797008B1473 /* Array+Extension.swift */,
 				2A0DE1CB29D8A14700E931B4 /* Font */,
 				F9B91C8B29D2EF05006F5688 /* Assets.xcassets */,
 				F9B91C9029D2EF05006F5688 /* Persistence.swift */,
 				F9B91C9529D2EF05006F5688 /* InterviewSparring.entitlements */,
 				F9B91C9229D2EF05006F5688 /* InterviewSparring.xcdatamodeld */,
 				F9B91C8D29D2EF05006F5688 /* Preview Content */,
+				F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */,
+				F9ED3D0829DC8314008B1473 /* WriteCareerView.swift */,
+				F94795F929DD765400DD4848 /* WriteQualificationView.swift */,
+				F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */,
+				F947960529DD932400DD4848 /* Model */,
+				F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */,
+				F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */,
+				F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */,
+				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
+				F9ED3D0029DC748C008B1473 /* StartView.swift */,
+				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
 			);
 			path = InterviewSparring;
 			sourceTree = "<group>";
@@ -212,15 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A0DE1C729D8A13C00E931B4 /* OFL.txt in Resources */,
-				2A0DE1CA29D8A13C00E931B4 /* NotoSansKR-Regular.otf in Resources */,
-				2A0DE1C429D8A13C00E931B4 /* NotoSansKR-Light.otf in Resources */,
 				F9B91C8F29D2EF05006F5688 /* Preview Assets.xcassets in Resources */,
-				2A0DE1C529D8A13C00E931B4 /* NotoSansKR-Bold.otf in Resources */,
-				2A0DE1C929D8A13C00E931B4 /* NotoSansKR-Medium.otf in Resources */,
 				F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */,
-				2A0DE1C829D8A13C00E931B4 /* NotoSansKR-Black.otf in Resources */,
-				2A0DE1C629D8A13C00E931B4 /* NotoSansKR-Thin.otf in Resources */,
+				F9ED3CFF29DC7406008B1473 /* Noto_Sans_KR in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */,
+				F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */,
+				F947960729DD94FE00DD4848 /* DataManager.swift in Sources */,
+				F947960029DD92B200DD4848 /* Career.swift in Sources */,
+				F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
 				2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
@@ -239,7 +279,25 @@
 				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
 				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
 				2AC921BC29DD1F4E005B39FD /* CoverletterList.swift in Sources */,
+				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
+				F9ED3D0D29DC8797008B1473 /* Array+Extension.swift in Sources */,
+				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
+				F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */,
+				F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */,
+				F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */,
+				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
+				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
+				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
+				F9ED3D0929DC8314008B1473 /* WriteCareerView.swift in Sources */,
+				F9ED3CC429DC6590008B1473 /* WriteEducationView.swift in Sources */,
 				F9B91C8829D2EF04006F5688 /* InterviewSparringApp.swift in Sources */,
+				F9ED3D0329DC74CE008B1473 /* Font+Extension.swift in Sources */,
+				F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */,
+				F947960229DD930000DD4848 /* Qualification.swift in Sources */,
+				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
+				F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */,
+				F9ED3D0529DC7686008B1473 /* CustomButtonStyle.swift in Sources */,
+				F947960429DD931D00DD4848 /* Language.swift in Sources */,
 				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +433,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -383,6 +442,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JobGym.InterviewSparring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -404,6 +466,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -412,6 +475,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JobGym.InterviewSparring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;

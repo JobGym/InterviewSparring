@@ -11,10 +11,17 @@ import SwiftUI
 struct InterviewSparringApp: App {
     let persistenceController = PersistenceController.shared
 
+    init(){
+            UINavigationBar.setAnimationsEnabled(false)
+        }
+    
+    @StateObject var dataManager = DataManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(dataManager)
         }
     }
 }

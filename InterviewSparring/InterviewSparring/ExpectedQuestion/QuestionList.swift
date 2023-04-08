@@ -21,7 +21,6 @@ struct QuestionList: View {
                 .padding(EdgeInsets(top: 60, leading: 50, bottom: 0, trailing: 30))
                 .foregroundColor(Color.primaryBlue)
                 .font(.system(size: 32, weight: .bold))
-//                .frame(width: 500, height: 180)
             
                 ZStack (alignment: .trailing){
                     ZStack (alignment: .leading){
