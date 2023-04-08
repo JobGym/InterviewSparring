@@ -61,7 +61,7 @@ struct QuestionList: View {
                             
                             
                             //생성된 질문으로 교체
-                            Text(dataManager.interviewQuestion[1])
+                            Text(dataManager.interviewQuestion[questionCount])
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(Color.white)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
