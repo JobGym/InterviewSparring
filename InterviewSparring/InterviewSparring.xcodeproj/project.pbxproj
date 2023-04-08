@@ -23,6 +23,7 @@
 		F96C47F129E14FA100A0FC30 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		F96C47F229E14FC100A0FC30 /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
 		F96C47F329E14FEB00A0FC30 /* InterviewSparringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */; };
+		F96C47F729E1795400A0FC30 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C47F629E1795400A0FC30 /* Date+Extension.swift */; };
 		F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */; };
 		F9B91C8C29D2EF05006F5688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8B29D2EF05006F5688 /* Assets.xcassets */; };
 		F9B91C8F29D2EF05006F5688 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B91C8E29D2EF05006F5688 /* Preview Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		F947960129DD930000DD4848 /* Qualification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qualification.swift; sourceTree = "<group>"; };
 		F947960329DD931D00DD4848 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		F947960629DD94FE00DD4848 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F96C47F629E1795400A0FC30 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		F9B91C8429D2EF04006F5688 /* InterviewSparring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewSparring.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSparringApp.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
 				F9ED3D0029DC748C008B1473 /* StartView.swift */,
 				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
+				F96C47F629E1795400A0FC30 /* Date+Extension.swift */,
 			);
 			path = InterviewSparring;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				20939DED29E13DF500983B9B /* OpenAPIViewModel.swift in Sources */,
 				20939DEF29E13E1600983B9B /* SpeechToTextViewModel.swift in Sources */,
 				2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */,
+				F96C47F729E1795400A0FC30 /* Date+Extension.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
 				2AC921BC29DD1F4E005B39FD /* CoverletterList.swift in Sources */,
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
