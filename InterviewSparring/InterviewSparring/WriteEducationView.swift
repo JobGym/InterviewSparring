@@ -40,10 +40,8 @@ struct WriteEducationView: View {
         DropdownOption(key: "Overseas", val: "해외")
     ]
     var body: some View {
-        
-        ZStack(alignment: .trailing) {
-            
-            ProgressView(value: 0)
+        ZStack(alignment: .trailing){
+            ProgressView(value: 99)
             
             VStack(spacing: 140) {
                 VStack(alignment: .leading, spacing: 0) {
@@ -146,9 +144,9 @@ struct WriteEducationView: View {
                                 .font(Font.Job.title3)
                         }
                         .frame(width: 175)
-                        
                     }
                 }
+                .padding(.horizontal, 40)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 
                 HStack(spacing: 16) {
@@ -165,7 +163,7 @@ struct WriteEducationView: View {
                             Text("다음")
                         }
                         .buttonStyle(CustomButtonStyle(backgroundColor: checkDisabled() ? .disabledButton : .primaryBlue))
-                        .disabled(checkDisabled())
+//                        .disabled(checkDisabled())
                     } else {
                         NavigationLink {
                             WriteCareerView(careerList: $dataManager.careers)
@@ -176,9 +174,12 @@ struct WriteEducationView: View {
                     }
                 }
             }
-            .padding(.horizontal, 80)
-            .padding(.vertical, 63)
+            .padding(.horizontal, 40)
+            .padding(.top, 63)
+
         }
+        .background(Color.blueBackground)
+        .navigationBarHidden(true)
     }
     func checkDisabled() -> Bool {
         return dataManager.educationHistory.educationType.isEmpty ||

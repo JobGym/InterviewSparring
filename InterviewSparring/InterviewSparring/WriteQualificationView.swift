@@ -78,6 +78,7 @@ struct WriteQualificationView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .padding(.horizontal, 40)
                 
                 HStack(spacing: 16) {
                     Button {
@@ -102,9 +103,11 @@ struct WriteQualificationView: View {
                     }
                 }
             }
-            .padding(.horizontal, 80)
+            .padding(.horizontal, 40)
             .padding(.vertical, 63)
         }
+        .background(Color.blueBackground)
+        .navigationBarHidden(true)
     }
 }
 

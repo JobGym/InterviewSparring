@@ -21,75 +21,79 @@ struct WriteCareerView: View {
         ZStack(alignment: .trailing){
             ProgressView(value: 99)
             
-            GeometryReader { geo in
-                let spacing: CGFloat = 10
-                let width = geo.size.width - 320
-                VStack(alignment: .leading, spacing: 32) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("이력서 제출")
-                            .font(Font.Job.title1)
-                        Text("경력사항")
-                            .font(Font.Job.headline1)
+            VStack(alignment: .leading, spacing: 32) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("이력서 제출")
+                        .font(Font.Job.title1)
+                    Text("경력사항")
+                        .font(Font.Job.headline1)
+                }
+                .foregroundColor(.primaryBlue)
+                .padding(.top, 63)
+                
+                VStack(spacing: 5) {
+                    HStack{
+                        Spacer()
+                        
+                        Button {
+                            isShowAddView.toggle()
+                        } label: {
+                            Image("plus")
+                                .frame(width: 30, height: 30)
+                        }
+                        .buttonStyle(.borderless)
                     }
-                    .foregroundColor(.primaryBlue)
-                    .padding(.top, 63)
+                    .padding(.top, 24)
+                    .padding(.horizontal, 40)
                     
+                    HStack(spacing: 15) {
+                        Text("고용형태")
+                            .frame(width: 100, alignment: .center)
+                        Text("회사명")
+                            .frame(width: 100, alignment: .center)
+                        Text("부서명")
+                            .frame(width: 100, alignment: .center)
+                        Text("근무 기간(개월)")
+                            .frame(width: 100, alignment: .center)
+                        Text("퇴사 유무")
+                            .frame(width: 100, alignment: .center)
+                        Text("직책")
+                            .frame(width: 100, alignment: .center)
+                        Text("업무내용")
+                            .frame(width: 100, alignment: .center)
+                    }
+                    .font(.Job.headline1)
+                    .foregroundColor(.gray)
+                    .padding(.horizontal, 40)
+                    .padding(.trailing, 40)
+                    .padding(.vertical, 16)
                     
                     List {
-                        HStack{
-                            Spacer()
-                            
-                            Button {
-                                isShowAddView.toggle()
-                            } label: {
-                                Image("plus")
-                                    .frame(width: 30, height: 30)
-                            }
-                            .buttonStyle(.borderless)
-                        }
-                        .padding(.top, 24)
-                        
-                        HStack(spacing: spacing) {
-                            Text("고용형태")
-                                .frame(width: width/12, alignment: .center)
-                            Text("회사명")
-                                .frame(width: width/7.5, alignment: .center)
-                            Text("부서명")
-                                .frame(width: width/7.5, alignment: .center)
-                            Text("근무 기간(개월)")
-                                .frame(width: width/6, alignment: .center)
-                            Text("퇴사 유무")
-                                .frame(width: width/10, alignment: .center)
-                            Text("직책")
-                                .frame(width: width/7.5, alignment: .center)
-                            Text("업무내용")
-                                .frame(width: width/6.5, alignment: .center)
-                        }
-                        .font(.Job.headline1)
-                        .foregroundColor(.gray)
-                        .padding(.horizontal, 80)
-                        .padding(.vertical, 16)
-                        
-                        
                         ForEach(careerList, id: \.self) { career in
                             
                             ForEach(career) { content in
                                 VStack {
-                                    HStack(spacing: spacing) {
+                                    HStack(spacing: 15) {
                                         Text(content.employmentForm)
-                                            .frame(width: width/12, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
+                                            .lineLimit(1)
                                         Text(content.firm)
-                                            .frame(width: width/7.5, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
+                                            .lineLimit(1)
                                         Text(content.department)
-                                            .frame(width: width/7.5, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
+                                            .lineLimit(1)
                                         Text("\(content.period)개월")
-                                            .frame(width: width/6, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
+                                            .lineLimit(1)
                                         Text(content.isResignate ? "유" : "무")
-                                            .frame(width: width/10, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
+                                            .lineLimit(1)
                                         Text(content.position)
-                                            .frame(width: width/7.5, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
+                                            .lineLimit(1)
                                         Text(content.details)
-                                            .frame(width: width/6.5, alignment: .center)
+                                            .frame(width: 100, alignment: .center)
                                             .lineLimit(1)
                                         Button {
                                             careerList[0].removeAll { $0.id == content.id }
@@ -102,49 +106,53 @@ struct WriteCareerView: View {
                                         
                                     }
                                     .font(.Job.body1)
-                                    
-                                    Divider()
-                                        .foregroundColor(.gray)
                                 }
+                                .listRowBackground(Color.clear)
+                                .listRowInsets(EdgeInsets(top: 5, leading: 10, bottom: 10, trailing: 5))
                             }
                         }
-                        .padding(.horizontal, 80)
                     }
-                    .cornerRadius(22)
-                    
-                    
-                    HStack(spacing: 16) {
-                        Spacer()
-                        Button {
-                            print("이전")
-                            dismiss()
-                        } label: {
-                            Text("이전")
-                        }
-                        
-                        if #available(iOS 16.0, *) {
-                            NavigationLink(value: dataManager.qualification) {
-                                Text("다음")
-                            }
-                            .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                        } else {
-                            NavigationLink {
-                                WriteQualificationView(qualification: $dataManager.qualification)
-                            } label: {
-                                Text("다음")
-                            }
-                            .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
-                        }
-                        
-                        Spacer()
-                    }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
-                    .padding(.bottom, 64)
-                    
+                    .listStyle(.plain)
+                    .padding(.horizontal, 40)
                 }
-                .padding(.horizontal, 80)
+                .background(Color.white)
+                .cornerRadius(22)
+                
+                
+                HStack(spacing: 16) {
+                    Spacer()
+                    Button {
+                        print("이전")
+                        dismiss()
+                    } label: {
+                        Text("이전")
+                    }
+                    
+                    if #available(iOS 16.0, *) {
+                        NavigationLink(value: dataManager.qualification) {
+                            Text("다음")
+                        }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    } else {
+                        NavigationLink {
+                            WriteQualificationView(qualification: $dataManager.qualification)
+                        } label: {
+                            Text("다음")
+                        }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                    }
+                    
+                    Spacer()
+                }
+                .buttonStyle(CustomButtonStyle(backgroundColor: .blue))
+                .padding(.bottom, 64)
+                
             }
+            .padding(.horizontal, 40)
+
         }
+        .background(Color.blueBackground)
+        .navigationBarHidden(true)
         .sheet(isPresented: $isShowAddView) {
             AddCareerView(isShowAddView: $isShowAddView, careerList: $careerList)
         }

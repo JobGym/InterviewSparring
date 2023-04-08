@@ -105,7 +105,7 @@ struct WriteLanguageView: View {
                         }
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .padding(.horizontal, 40)
                 
                 HStack(spacing: 16) {
                     Button {
@@ -115,7 +115,7 @@ struct WriteLanguageView: View {
                     }
                     .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     
-                    if #available(macOS 13.0, *) {
+                    if #available(iOS 16.0, *) {
                         //                    NavigationLink(value: dataManager.careers) {
                         //                        Text("다음")
                         //                    }
@@ -130,9 +130,11 @@ struct WriteLanguageView: View {
                     }
                 }
             }
-            .padding(.horizontal, 80)
-            .padding(.vertical, 63)
+            .padding(.horizontal, 40)
+            .padding(.top, 63)
         }
+        .background(Color.blueBackground)
+        .navigationBarHidden(true)
     }
 }
 

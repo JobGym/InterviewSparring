@@ -32,7 +32,6 @@ struct AddCareerView: View {
                 .font(.Job.title1)
                 .foregroundColor(.primaryBlue)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 52)
                 .padding(.top, 40)
             
             VStack(alignment: .center, spacing: 40) {
@@ -69,12 +68,12 @@ struct AddCareerView: View {
                             .foregroundColor(.primaryBlue)
                         TextField("????", text: $career.position)
                     }
-                    HStack(spacing: 8) {
-                        Text("업무내용")
-                            .font(.Job.title3)
-                            .foregroundColor(.primaryBlue)
-                        TextField("????", text: $career.details)
-                    }
+                }
+                HStack(spacing: 8) {
+                    Text("업무내용")
+                        .font(.Job.title3)
+                        .foregroundColor(.primaryBlue)
+                    TextField("????", text: $career.details)
                 }
                 
                 HStack (spacing: 40){
@@ -97,7 +96,7 @@ struct AddCareerView: View {
                         } label: {
                             Image(career.isResignate ? "check" : "unCheck")
                                 .resizable()
-                                .frame(width: 48, height: 48)
+                                .frame(width: 30, height: 30)
                         }
                         .buttonStyle(.borderless)
                     }
@@ -138,10 +137,10 @@ struct AddCareerView: View {
                 .disabled(checkDisabled())
                 
             }
-            .padding(EdgeInsets(top: 0, leading: 161, bottom: 64, trailing: 161))
+            
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(minWidth: 1107, minHeight: 613)
+        .padding(EdgeInsets(top: 0, leading: 30, bottom: 30, trailing: 30))
         .background(Color.blueBackground)
     }
     

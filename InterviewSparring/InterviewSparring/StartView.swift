@@ -46,10 +46,8 @@ struct StartView: View {
                         WriteLanguageView(language: $dataManager.language)
                     }
                 }
-                .frame(minWidth: 1240, minHeight: 776)
                 .background(Color.blueBackground)
             }
-            
         } else {
             // Fallback on earlier versions
             NavigationView {
