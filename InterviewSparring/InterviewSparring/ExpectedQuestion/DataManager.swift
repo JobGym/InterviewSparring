@@ -17,4 +17,10 @@ class DataManager: ObservableObject {
     @Published var jobSelection = JobQuestion.none
     @Published var jobQuestion = [String]()
     @Published var jobAnswer = [String](repeating: "", count: 4)
+    
+    var summaryVoiceResult = [[String]](repeating: [String](), count: 3)
+    var summaryAnswerResult = ""
+    
+    var voiceScore = 30
+    var answerScore = 87
 }
