@@ -96,16 +96,6 @@
 			path = ExpectedQuestion;
 			sourceTree = "<group>";
 		};
-		2AC3A78F29E02C8300487FA6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
-				2AC921BA29DD1ECA005B39FD /* CoverLetter */,
-				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		2AC921BA29DD1ECA005B39FD /* CoverLetter */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +127,9 @@
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
 				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
 				2AC3A79029E02DD900487FA6 /* JobQuestion.swift */,
-				2AC3A78F29E02C8300487FA6 /* Views */,
+				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
+				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
+				2AC921BA29DD1ECA005B39FD /* CoverLetter */,
 				2A0DE1CB29D8A14700E931B4 /* Font */,
 				F9B91C8B29D2EF05006F5688 /* Assets.xcassets */,
 				F9B91C9029D2EF05006F5688 /* Persistence.swift */,
@@ -393,7 +385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -422,7 +414,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
