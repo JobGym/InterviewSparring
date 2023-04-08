@@ -174,6 +174,34 @@ struct ProgressBar: View {
                 
             }
         }
+        .frame(height: 20)
+    }
+}
+
+struct ProgressBarHorizontal: View {
+    var value: CGFloat
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .frame(width: geometry.size.width , height: 20)
+                    .foregroundColor(.progressGray)
+                
+                ZStack(alignment: .trailing) {
+                    Rectangle()
+                        .frame(width: geometry.size.width/100 * value , height: 20)
+                        .foregroundColor(.primaryBlue)
+                        .cornerRadius(54)
+                    Text("\(Int(value))")
+                        .font(.Job.footnote2)
+                        .foregroundColor(.white)
+                        .padding(5)
+                }
+            }
+            .cornerRadius(54)
+        }
+        .frame(height: 20)
     }
 }
 
