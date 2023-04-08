@@ -38,7 +38,8 @@ final class OpenAPIViewModel: ObservableObject {
     }
     
     func submitQuestion() {
-        questionText.append("\n\n이 이력서 내용을 바탕으로'요'자로 끝나는 면접 질문 4개를 각각 세미콜론로 구분해서 대괄호 안에 넣어줘.")
+        questionText.append("\n\n이 이력서 내용을 바탕으로 '요'자로 끝나는 면접 질문 4개를 각각 세미콜론로 구분해서 대괄호 안에 넣어줘.")
+        
         guard !questionText.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }

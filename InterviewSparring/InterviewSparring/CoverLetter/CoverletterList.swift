@@ -23,9 +23,9 @@ struct CoverletterList: View {
             NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel, speechToTextViewModel: speechToTextViewModel), isActive: $isDoneAll)
             
             if openAPIViewModel.isLoading {
+                if !isDoneAll{
                 LoadingView()
                     .onDisappear {
-                        if !isDoneAll{
                             if index <= 3 {
                                 dataManager.queryString.append(openAPIViewModel.resultTexts[1])
                             }
@@ -120,11 +120,7 @@ struct CoverletterList: View {
                                         //                                    }
                                         // 제출하기 버튼
                                         Button {
-                                            openAPIViewModel.questionText = dataManager.jobAnswer[index]
-                                            openAPIViewModel.summarizeAnswer()
-                                            
                                             isDoneAll = true
-                                            
                                             openAPIViewModel.questionText = dataManager.queryString
                                             openAPIViewModel.submitQuestion()
                                             

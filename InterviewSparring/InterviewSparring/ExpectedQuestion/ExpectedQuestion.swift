@@ -73,7 +73,7 @@ struct ExpectedQuestion: View {
     var body: some View {
         if openAPIViewModel.isLoading {
             LoadingView()
-                .onDisappear {
+                .onDisappear{
                     dataManager.interviewQuestion = openAPIViewModel.resultTexts
                 }
         }
