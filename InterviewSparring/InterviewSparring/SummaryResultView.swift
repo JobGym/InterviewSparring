@@ -67,10 +67,14 @@ struct ResultContentView: View {
                             .foregroundColor(.primaryBlue)
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         ForEach(results, id: \.self) {result in
-                            Text(result)
-                                .font(.Job.footnote2)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                .padding(.leading, 15)
+                            HStack(alignment: .top, spacing: 5) {
+                                Text("•")
+                                Text(result)
+                                    .font(.Job.footnote2)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                    .lineSpacing(3)
+                            }
+                            .padding(.leading, 15)
                         }
                     }
                 }
@@ -82,6 +86,7 @@ struct ResultContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     .padding(.horizontal, 15)
                     .padding(.vertical, 15)
+                    .lineSpacing(3)
             }
         }
         .background(Color.white)
