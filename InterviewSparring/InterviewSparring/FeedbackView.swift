@@ -75,7 +75,6 @@ struct FeedbackView: View {
                         Spacer()
                         
                         Button {
-                            print("이전 질문")
                             if index <= 0 {
                                 
                             } else {
@@ -89,7 +88,6 @@ struct FeedbackView: View {
                     
                     HStack {
                         Button {
-                            print("다음 질문")
                             if index >= 3 {
                                 
                             } else {
@@ -98,14 +96,14 @@ struct FeedbackView: View {
                         } label: {
                             Text("다음 질문")
                         }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: index == 3 ? .gray : .primaryBlue))
                         Spacer()
                         Button {
-                            print("홈으로")
                         } label: {
                             Text("홈으로")
                         }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     }
-                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                 }
                 
             }
