@@ -12,6 +12,7 @@ struct CoverletterList: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var openAPIViewModel = OpenAPIViewModel()
+    @ObservedObject var speechToTextViewModel = SpeechToTextViewModel()
     
     @State var index = 0
     @State var isDoneAll = false
@@ -24,15 +25,15 @@ struct CoverletterList: View {
     
     var body: some View {
         ZStack{
-            NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel), isActive: $isDoneAll)
+            NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel, speechToTextViewModel: speechToTextViewModel), isActive: $isDoneAll)
             
             ProgressView(value: 6 + CGFloat(index))
             
             if openAPIViewModel.isLoading {
+                if !isDoneAll{
                 LoadingView()
                     .onDisappear {
-                        if index <= 3 {
-                            if !isDoneAll{
+                            if index <= 3 {
                                 dataManager.queryString.append(openAPIViewModel.resultTexts[1])
                             }
                         }
@@ -66,8 +67,6 @@ struct CoverletterList: View {
                                     }
                                     .frame(height: 100)
                             
-                                    //VStack (alignment: .center){
-                            
                                     Divider()
                                         .frame(width: screen.size.width*0.8)
                                         .background(Color.blue)
@@ -85,11 +84,7 @@ struct CoverletterList: View {
                                             } else {
                                                 self.dataManager.jobAnswer[index] = lastText
                                             }
-                                    
                                         }
-                                        .cornerRadius(15)
-                                        .padding(30)
-                            
                                     Text("\(wordCount)/1000 ")
                                         .font(.headline)
                                         .foregroundColor(.secondary)
@@ -122,20 +117,17 @@ struct CoverletterList: View {
                             if index >= 3 {
                                 // 제출하기 버튼
                                 Button {
-                                    openAPIViewModel.questionText = dataManager.jobAnswer[index]
-                                    openAPIViewModel.summarizeAnswer()
-                                    
                                     isDoneAll = true
-                                    
                                     openAPIViewModel.questionText = dataManager.queryString
                                     openAPIViewModel.submitQuestion()
-                                    
                                 } label: {
                                     Text("제출하기")
                                 }
+                                
                             } else {
                                 // 0 1 2 인덱스 뷰 다음
                                 Button {
+                                    wordCount = 0
                                     openAPIViewModel.questionText = dataManager.jobAnswer[index]
                                     openAPIViewModel.summarizeAnswer()
                                     index += 1
