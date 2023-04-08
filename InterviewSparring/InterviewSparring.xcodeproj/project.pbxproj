@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
+		2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3A79029E02DD900487FA6 /* JobQuestion.swift */; };
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
+		2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921B829DC6838005B39FD /* CoverletterView.swift */; };
+		2AC921BC29DD1F4E005B39FD /* CoverletterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */; };
 		F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795F929DD765400DD4848 /* WriteQualificationView.swift */; };
 		F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */; };
 		F947960029DD92B200DD4848 /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FF29DD92B200DD4848 /* Career.swift */; };
@@ -42,7 +45,10 @@
 /* Begin PBXFileReference section */
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
+		2AC3A79029E02DD900487FA6 /* JobQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQuestion.swift; sourceTree = "<group>"; };
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
+		2AC921B829DC6838005B39FD /* CoverletterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverletterView.swift; sourceTree = "<group>"; };
+		2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverletterList.swift; sourceTree = "<group>"; };
 		F94795F929DD765400DD4848 /* WriteQualificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteQualificationView.swift; sourceTree = "<group>"; };
 		F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLanguageView.swift; sourceTree = "<group>"; };
 		F94795FF29DD92B200DD4848 /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
@@ -103,6 +109,15 @@
 			path = ExpectedQuestion;
 			sourceTree = "<group>";
 		};
+		2AC921BA29DD1ECA005B39FD /* CoverLetter */ = {
+			isa = PBXGroup;
+			children = (
+				2AC921B829DC6838005B39FD /* CoverletterView.swift */,
+				2AC921BB29DD1F4E005B39FD /* CoverletterList.swift */,
+			);
+			path = CoverLetter;
+            sourceTree = "<group>";
+        };
 		F947960529DD932400DD4848 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,8 +148,12 @@
 		F9B91C8629D2EF04006F5688 /* InterviewSparring */ = {
 			isa = PBXGroup;
 			children = (
-				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
+				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
+				2AC3A79029E02DD900487FA6 /* JobQuestion.swift */,
+				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
+				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
+				2AC921BA29DD1ECA005B39FD /* CoverLetter */,
 				F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */,
 				F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */,
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
@@ -253,6 +272,13 @@
 				F947960029DD92B200DD4848 /* Career.swift in Sources */,
 				F9ED3D0B29DC8347008B1473 /* AddCareerView.swift in Sources */,
 				F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */,
+				2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */,
+				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
+				2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */,
+				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
+				F9B91C8A29D2EF04006F5688 /* ContentView.swift in Sources */,
+				2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */,
+				2AC921BC29DD1F4E005B39FD /* CoverletterList.swift in Sources */,
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
 				F9ED3D0D29DC8797008B1473 /* Array+Extension.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
