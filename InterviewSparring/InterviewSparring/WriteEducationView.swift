@@ -41,7 +41,7 @@ struct WriteEducationView: View {
     ]
     var body: some View {
         ZStack(alignment: .trailing){
-            ProgressView(value: 99)
+            ProgressView(value: 1)
             
             VStack(spacing: 140) {
                 VStack(alignment: .leading, spacing: 0) {
