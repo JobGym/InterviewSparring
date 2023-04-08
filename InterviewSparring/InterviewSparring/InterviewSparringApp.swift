@@ -11,6 +11,10 @@ import SwiftUI
 struct InterviewSparringApp: App {
     let persistenceController = PersistenceController.shared
 
+    init(){
+            UINavigationBar.setAnimationsEnabled(false)
+        }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -24,7 +24,6 @@ struct QuestionList: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color.primaryBlue)
                     .padding(EdgeInsets(top: 10, leading: 50, bottom: 10, trailing: 50))
-                    .frame(width: 1200, height: 150)
                 
                 HStack{
                     
