@@ -11,11 +11,11 @@ extension Color {
  
     static let primaryBlue = Color("primaryBlue")
     static let blueBackground = Color("backgroundColor")
+    static let lightGray = Color("lightGray")
     
     //static let pdfComponentBlue = Color("pdfComponentBlue")
     //static let pdfComponentRed = Color("pdfComponentRed")
     //static let pdfStrokeRed = Color("pdfStrokeRed")
-    //static let lightGray = Color("lightGray")
     
     //static let Background_black = Color(hex: "#f1f6ff")
 }

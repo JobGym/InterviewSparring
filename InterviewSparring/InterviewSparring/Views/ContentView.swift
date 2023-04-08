@@ -12,12 +12,16 @@ import CoreData
 
 struct ContentView: View {
     var body: some View {
-        ExpectedQuestion()
+        CoverletterList()
+//        ExpectedQuestion()
+//        CoverletterView()
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
     }
 }
