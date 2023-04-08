@@ -15,6 +15,9 @@ struct CoverletterList: View {
     @State var index = 0
     @State var isDoneAll = false
     
+    @State private var wordCount: Int = 0
+    @State private var lastText = ""
+    
     var body: some View {
         
         GeometryReader { screen in
@@ -45,25 +48,45 @@ struct CoverletterList: View {
                             
                             VStack (alignment: .leading){
                                 //자소서 항목 질문 1~4
-                                Text(dataManager.jobQuestion[index])
-                                    .font(.title3)
-                                    .foregroundColor(Color.primaryBlue)
-                                    .frame(maxHeight: screen.size.height*0.08)
-                                
-                                VStack (alignment: .center){
-                                    
-                                    Divider()
-                                        .frame(width: screen.size.width*0.8)
-                                        .background(Color.blue)
-                                        .padding(.bottom, 10)
-                                    
-                                    //Text 입력 창
-                                    TextEditor(text: $dataManager.jobAnswer[index])
-                                        .cornerRadius(15)
-                                        .frame(width: screen.size.width*0.8, height: screen.size.height*0.6)
-                                        //.background(Color.lightGray)
-                                    
+                                ScrollView {
+                                    Text(dataManager.jobQuestion[index])
+                                        .font(.system(size: 20, weight: .bold))
+                                        .foregroundColor(Color.primaryBlue)
+                                        .frame(maxWidth: screen.size.width*0.8, maxHeight: screen.size.height*0.3)
                                 }
+                                .padding(.top, screen.size.height*0.03)
+                                
+                                
+                                //VStack (alignment: .center){
+                                
+                                Divider()
+                                    .frame(width: screen.size.width*0.8)
+                                    .background(Color.blue)
+                                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                                
+                                //Text 입력 창
+                                // $dataManager.jobAnswer[index]
+                                TextEditor(text: $dataManager.jobAnswer[index])
+                                    .onChange(of: dataManager.jobAnswer[index]){ text in
+                                       // let text = $statement
+                                        wordCount = text.count
+                                        
+                                        if wordCount <= 1000 {
+                                            lastText = text
+                                        } else {
+                                            self.dataManager.jobAnswer[index] = lastText
+                                        }
+                                        
+                                    }
+                                    .cornerRadius(15)
+                                    .frame(width: screen.size.width*0.8, height: screen.size.height*0.5)
+                                //.background(Color.lightGray)
+                                
+                                Text("\(wordCount)/1000 ")
+                                    .font(.headline)
+                                    .foregroundColor(.secondary)
+                                    .padding(.leading)
+                                //}
                             }
                             
                         }
@@ -108,7 +131,7 @@ struct CoverletterList: View {
                                 }
                                 .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                             }
-
+                            
                         }
                     }
                     
