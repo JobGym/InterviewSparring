@@ -65,6 +65,8 @@ struct RecordStyle: ButtonStyle {
     }
 }
 struct ExpectedQuestion: View {
+    @EnvironmentObject var dataManager: DataManager
+    
     @State var isPressed = false
     
     var body: some View {

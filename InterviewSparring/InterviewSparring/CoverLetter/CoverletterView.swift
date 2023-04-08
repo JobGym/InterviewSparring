@@ -9,9 +9,8 @@
 import SwiftUI
 
 struct CoverletterView: View {
-    @State var pressButton = false
-    @State var jobSelection : String = ""
-   
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dataManager: DataManager
     
     var body: some View {
         
@@ -37,45 +36,48 @@ struct CoverletterView: View {
                     
                     HStack{
                         Button {
-                            jobSelection = "manager"
+                            dataManager.jobSelection = JobQuestion.projectManager
+                            dataManager.jobQuestion = dataManager.jobSelection.fetchQuestion()
                         } label: {
                             Text("기획")
                                 .font(.system(size: 20))
                                 .padding(.horizontal, 30)
                                 .frame(height: 44)
-                                .background(Capsule().fill(Color.lightGray))
+                                .background(isSameJobSelection(jobSelection: JobQuestion.projectManager) ? Capsule().fill(Color.primaryBlue) : Capsule().fill(Color.lightGray))
                         }
                         
                         
                         Button {
-                            jobSelection = "developer"
-                            
+                            dataManager.jobSelection = JobQuestion.developer
+                            dataManager.jobQuestion = dataManager.jobSelection.fetchQuestion()
                         } label: {
                             Text("개발자")
                                 .font(.system(size: 20))
                                 .padding(.horizontal, 30)
                                 .frame(height: 44)
-                                .background(Capsule().fill(Color.lightGray))
+                                .background(isSameJobSelection(jobSelection: JobQuestion.developer) ? Capsule().fill(Color.primaryBlue) : Capsule().fill(Color.lightGray))
                         }
                         
                         Button {
-                            jobSelection = "designer"
+                            dataManager.jobSelection = JobQuestion.designer
+                            dataManager.jobQuestion = dataManager.jobSelection.fetchQuestion()
                         } label: {
                             Text("디자이너")
                                 .font(.system(size: 20))
                                 .padding(.horizontal, 30)
                                 .frame(height: 44)
-                                .background(Capsule().fill(Color.lightGray))
+                                .background(isSameJobSelection(jobSelection: JobQuestion.designer) ? Capsule().fill(Color.primaryBlue) : Capsule().fill(Color.lightGray))
                         }
                         
                         Button {
-                            jobSelection = "researcher"
+                            dataManager.jobSelection = JobQuestion.researcher
+                            dataManager.jobQuestion = dataManager.jobSelection.fetchQuestion()
                         } label: {
                             Text("리서쳐")
                                 .font(.system(size: 20))
                                 .padding(.horizontal, 30)
                                 .frame(height: 44)
-                                .background(Capsule().fill(Color.lightGray))
+                                .background(isSameJobSelection(jobSelection: JobQuestion.researcher) ? Capsule().fill(Color.primaryBlue) : Capsule().fill(Color.lightGray))
                         }
                     }
                     .foregroundColor(Color.white)
@@ -84,29 +86,29 @@ struct CoverletterView: View {
                     
                     HStack {
                         Button {
-                            
+                            dismiss()
                         } label: {
                             Text("이전")
-                                .font(.system(size: 20))
-                                .padding(.horizontal, 35)
-                                .frame(height: 44)
-                                .foregroundColor(Color.white)
-                                .background(Capsule().fill(Color.primaryBlue))
-                            
                         }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                         
-                        Button {
-                            
-                        } label: {
-                            Text("다음")
-                                .font(.system(size: 20))
-                                .padding(.horizontal, 35)
-                                .frame(height: 44)
-                                .foregroundColor(Color.white)
-                                .background(Capsule().fill(Color.primaryBlue))
-                            
+                        if #available(iOS 16.0, *) {
+                            NavigationLink(value: dataManager.jobAnswer) {
+                                Text("다음")
+                            }
+                            .buttonStyle(CustomButtonStyle(backgroundColor: isButtonDisabled() ? .lightGray : .primaryBlue))
+                            .disabled(isButtonDisabled())
+                        } else {
+                            NavigationLink {
+                                CoverletterList()
+                            } label: {
+                                Text("다음")
+                            }
+                            .buttonStyle(CustomButtonStyle(backgroundColor: isButtonDisabled() ? .lightGray : .primaryBlue))
+                            .disabled(isButtonDisabled())
                         }
                     }
+                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     .padding(.bottom, screen.size.height*0.025)
                     
                 }
@@ -115,6 +117,20 @@ struct CoverletterView: View {
             }
             .frame(width: screen.size.width, height: screen.size.height)
             .background(Color.blueBackground)
+        }
+    }
+    func isSameJobSelection(jobSelection: JobQuestion) -> Bool {
+        if dataManager.jobSelection == jobSelection {
+            return true
+        } else {
+            return false
+        }
+    }
+    func isButtonDisabled() -> Bool {
+        if dataManager.jobSelection == JobQuestion.none {
+            return true
+        } else {
+            return false
         }
     }
 }

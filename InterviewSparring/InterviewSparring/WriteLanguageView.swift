@@ -116,13 +116,13 @@ struct WriteLanguageView: View {
                     .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     
                     if #available(iOS 16.0, *) {
-                        //                    NavigationLink(value: dataManager.careers) {
-                        //                        Text("다음")
-                        //                    }
-                        //                    .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
+                        NavigationLink(value: dataManager.jobSelection) {
+                            Text("다음")
+                        }
+                        .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     } else {
                         NavigationLink {
-                            
+                            CoverletterView()
                         } label: {
                             Text("다음")
                         }
