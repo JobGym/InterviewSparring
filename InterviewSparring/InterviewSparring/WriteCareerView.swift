@@ -72,43 +72,46 @@ struct WriteCareerView: View {
                         ForEach(careerList, id: \.self) { career in
                             
                             ForEach(career) { content in
-                                VStack {
-                                    HStack(spacing: 15) {
-                                        Text(content.employmentForm)
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Text(content.firm)
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Text(content.department)
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Text("\(content.period)개월")
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Text(content.isResignate ? "유" : "무")
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Text(content.position)
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Text(content.details)
-                                            .frame(width: 100, alignment: .center)
-                                            .lineLimit(1)
-                                        Button {
-                                            careerList[0].removeAll { $0.id == content.id }
-                                        } label: {
-                                            Image("trash")
-                                                .frame(width: 24, height: 24)
+                                if !content.employmentForm.isEmpty {
+                                    VStack {
+                                        
+                                        HStack(spacing: 15) {
+                                            Text(content.employmentForm)
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Text(content.firm)
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Text(content.department)
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Text("\(content.period)개월")
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Text(content.isResignate ? "유" : "무")
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Text(content.position)
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Text(content.details)
+                                                .frame(width: 100, alignment: .center)
+                                                .lineLimit(1)
+                                            Button {
+                                                careerList[0].removeAll { $0.id == content.id }
+                                            } label: {
+                                                Image("trash")
+                                                    .frame(width: 24, height: 24)
+                                            }
+                                            .buttonStyle(.borderless)
+                                            .padding(.leading, 10)
                                         }
-                                        .buttonStyle(.borderless)
-                                        .padding(.leading, 10)
+                                        .font(.Job.body1)
                                         
                                     }
-                                    .font(.Job.body1)
+                                    .listRowBackground(Color.clear)
+                                    .listRowInsets(EdgeInsets(top: 5, leading: 10, bottom: 10, trailing: 5))
                                 }
-                                .listRowBackground(Color.clear)
-                                .listRowInsets(EdgeInsets(top: 5, leading: 10, bottom: 10, trailing: 5))
                             }
                         }
                     }
