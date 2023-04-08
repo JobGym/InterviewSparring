@@ -67,11 +67,15 @@ struct RecordStyle: ButtonStyle {
 struct ExpectedQuestion: View {
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var openAPIViewModel: OpenAPIViewModel
+    @ObservedObject var speechToTextViewModel: SpeechToTextViewModel
     @State var isPressed = false
     
     var body: some View {
         if openAPIViewModel.isLoading {
             LoadingView()
+                .onDisappear {
+                    dataManager.interviewQuestion = openAPIViewModel.resultTexts
+                }
         }
         else{
             VStack (alignment: .center){
@@ -79,6 +83,7 @@ struct ExpectedQuestion: View {
                 
                 Button(action : {
                     isPressed.toggle()
+                    speechToTextViewModel.startRecording()
                 }){
                     
                 }

@@ -25,8 +25,8 @@ class SpeechToTextViewModel: ObservableObject {
         recognitionTask = nil
     }
     
-    func startRecording(selectedLang: String) {
-        let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: selectedLang))!
+    func startRecording() {
+        let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ko-KR"))!
         
         recognitionTask?.cancel()
         self.recognitionTask = nil
@@ -85,7 +85,7 @@ class SpeechToTextViewModel: ObservableObject {
         if isRecording {
             stopRecording()
         } else {
-            startRecording(selectedLang: selectedLang)
+            startRecording()
         }
         
         isRecording.toggle()

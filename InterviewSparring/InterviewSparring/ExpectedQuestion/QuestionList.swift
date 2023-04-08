@@ -11,6 +11,7 @@ import SwiftUI
 
 
 struct QuestionList: View {
+    @EnvironmentObject var dataManager: DataManager
     var body: some View {
         
         GeometryReader { screen in
@@ -40,7 +41,7 @@ struct QuestionList: View {
                             
                             
                             //생성된 질문으로 교체
-                            Text("iOS 앱의 생명주기(Lifecycle)에 대해 설명해주세요. \n 어떤 상태가 있고, 각 상태에서 어떤 메소드가 호출되는지 예를 들어주세요.")
+                            Text(dataManager.interviewQuestion[1])
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(Color.white)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
