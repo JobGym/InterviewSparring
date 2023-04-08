@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
-
+    
     var backgroundColor: Color
     var cornerRadius: CGFloat = 46
-
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 20, weight: .bold))

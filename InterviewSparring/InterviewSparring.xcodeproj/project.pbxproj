@@ -10,6 +10,7 @@
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
 		2A0DE1D029D8A61000E931B4 /* ExpectedQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */; };
 		2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9213429DAA932005B39FD /* QuestionList.swift */; };
+		F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */; };
 		F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795F929DD765400DD4848 /* WriteQualificationView.swift */; };
 		F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */; };
 		F947960029DD92B200DD4848 /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94795FF29DD92B200DD4848 /* Career.swift */; };
@@ -23,6 +24,7 @@
 		F9B91C9129D2EF05006F5688 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C9029D2EF05006F5688 /* Persistence.swift */; };
 		F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9B91C9229D2EF05006F5688 /* InterviewSparring.xcdatamodeld */; };
 		F9B91C9D29D2EF5B006F5688 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = F9B91C9C29D2EF5B006F5688 /* OpenAISwift */; };
+		F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */; };
 		F9ED3CC429DC6590008B1473 /* WriteEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */; };
 		F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */; };
 		F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */; };
@@ -41,6 +43,7 @@
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC9213429DAA932005B39FD /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
+		F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		F94795F929DD765400DD4848 /* WriteQualificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteQualificationView.swift; sourceTree = "<group>"; };
 		F94795FB29DD7B1A00DD4848 /* WriteLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLanguageView.swift; sourceTree = "<group>"; };
 		F94795FF29DD92B200DD4848 /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		F9B91C9029D2EF05006F5688 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F9B91C9329D2EF05006F5688 /* InterviewSparring.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InterviewSparring.xcdatamodel; sourceTree = "<group>"; };
 		F9B91C9529D2EF05006F5688 /* InterviewSparring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterviewSparring.entitlements; sourceTree = "<group>"; };
+		F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEducationView.swift; sourceTree = "<group>"; };
 		F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
 		F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerStyle.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				2A0DE1CC29D8A4A300E931B4 /* ExpectedQuestion */,
 				F9B91C8729D2EF04006F5688 /* InterviewSparringApp.swift */,
+				F98F8D5829D7FF7C00F9C956 /* FeedbackView.swift */,
+				F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */,
 				F9B91C8929D2EF04006F5688 /* ContentView.swift */,
 				2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */,
 				F9ED3D0229DC74CE008B1473 /* Font+Extension.swift */,
@@ -241,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */,
 				F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */,
 				F947960729DD94FE00DD4848 /* DataManager.swift in Sources */,
 				F947960029DD92B200DD4848 /* Career.swift in Sources */,
@@ -249,6 +256,7 @@
 				F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */,
 				F9ED3D0D29DC8797008B1473 /* Array+Extension.swift in Sources */,
 				2AC9213529DAA932005B39FD /* QuestionList.swift in Sources */,
+				F98F8D5929D7FF7C00F9C956 /* FeedbackView.swift in Sources */,
 				F9ED3D0129DC748C008B1473 /* StartView.swift in Sources */,
 				F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */,
 				F9B91C9429D2EF05006F5688 /* InterviewSparring.xcdatamodeld in Sources */,
