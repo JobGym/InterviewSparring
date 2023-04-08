@@ -10,6 +10,7 @@
 		20939DEB29E13DB800983B9B /* properties.json in Resources */ = {isa = PBXBuildFile; fileRef = 20939DEA29E13DB800983B9B /* properties.json */; };
 		20939DED29E13DF500983B9B /* OpenAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */; };
 		20939DEF29E13E1600983B9B /* SpeechToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */; };
+		20939DF129E1519000983B9B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DF029E1519000983B9B /* LoadingView.swift */; };
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
 		2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3A79029E02DD900487FA6 /* JobQuestion.swift */; };
 		2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921B829DC6838005B39FD /* CoverletterView.swift */; };
@@ -49,6 +50,7 @@
 		20939DEA29E13DB800983B9B /* properties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = properties.json; sourceTree = "<group>"; };
 		20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPIViewModel.swift; sourceTree = "<group>"; };
 		20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewModel.swift; sourceTree = "<group>"; };
+		20939DF029E1519000983B9B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC3A79029E02DD900487FA6 /* JobQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQuestion.swift; sourceTree = "<group>"; };
@@ -202,8 +204,10 @@
 				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
 				F9ED3D0029DC748C008B1473 /* StartView.swift */,
 				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
+				20939DF029E1519000983B9B /* LoadingView.swift */,
 				F96C47F629E1795400A0FC30 /* Date+Extension.swift */,
 				F96C47F429E1511B00A0FC30 /* SummaryResultView.swift */,
+
 			);
 			path = InterviewSparring;
 			sourceTree = "<group>";
@@ -325,6 +329,7 @@
 				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
 				F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */,
 				F947960429DD931D00DD4848 /* Language.swift in Sources */,
+				20939DF129E1519000983B9B /* LoadingView.swift in Sources */,
 				2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

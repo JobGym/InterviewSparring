@@ -66,31 +66,36 @@ struct RecordStyle: ButtonStyle {
 }
 struct ExpectedQuestion: View {
     @EnvironmentObject var dataManager: DataManager
+    @ObservedObject var openAPIViewModel: OpenAPIViewModel
     @State var isPressed = false
     
     var body: some View {
-        
-        VStack (alignment: .center){
-            QuestionList()
-    
-            Button(action : {
-                isPressed.toggle()
-            }){
-        
-            }
-            .buttonStyle(CircleStyle(isPressed: $isPressed))
-            .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
-//            .frame(width: 160, height: 160)
-            
-            
-            
+        if openAPIViewModel.isLoading {
+            LoadingView()
         }
-        .background(Color.blueBackground)
+        else{
+            VStack (alignment: .center){
+                QuestionList()
+                
+                Button(action : {
+                    isPressed.toggle()
+                }){
+                    
+                }
+                .buttonStyle(CircleStyle(isPressed: $isPressed))
+                .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
+                //            .frame(width: 160, height: 160)
+                
+                
+                
+            }
+            .background(Color.blueBackground)
+        }
     }
 }
 
-struct ExpectedQuestion_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpectedQuestion()
-    }
-}
+//struct ExpectedQuestion_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExpectedQuestion()
+//    }
+//}
