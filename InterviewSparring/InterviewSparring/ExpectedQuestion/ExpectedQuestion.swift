@@ -92,6 +92,7 @@ struct ExpectedQuestion: View {
                         if(isPressed == true){
                             //녹음 시작
                             recordCount = recordCount + 1
+                            speechToTextViewModel.startRecording()
                         }
                         else{
                             //녹음 끝
@@ -100,15 +101,13 @@ struct ExpectedQuestion: View {
                                 isDoneAll.toggle()
                             }
                         }
-                        
-                        speechToTextViewModel.startRecording()
+                       
                     }){
                         
                     }
                     .buttonStyle(CircleStyle(isPressed: $isPressed))
                     .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
                     //            .frame(width: 160, height: 160)
-                    
                     
                 }
                 

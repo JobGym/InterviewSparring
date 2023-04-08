@@ -34,9 +34,9 @@ struct WriteLanguageView: View {
     
     var body: some View {
         ZStack (alignment: .trailing) {
-            ProgressView(value: 285)
+            ProgressView(value: 4)
             
-            VStack(spacing: 140) {
+            VStack(spacing: 0) {
                 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("이력서 제출")
@@ -46,8 +46,10 @@ struct WriteLanguageView: View {
                 }
                 .foregroundColor(.primaryBlue)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 63)
                 
                 VStack(alignment: .center, spacing: 40) {
+                    Spacer()
                     HStack(spacing: 40) {
                         HStack(spacing: 8) {
                             Text("언어")
@@ -104,6 +106,7 @@ struct WriteLanguageView: View {
                                 .textFieldStyle(CustomTextFieldStyle())
                         }
                     }
+                    Spacer()
                 }
                 .padding(.horizontal, 40)
                 
@@ -129,9 +132,10 @@ struct WriteLanguageView: View {
                         .buttonStyle(CustomButtonStyle(backgroundColor: .primaryBlue))
                     }
                 }
+                .padding(.bottom, 63)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.horizontal, 40)
-            .padding(.top, 63)
         }
         .background(Color.blueBackground)
         .navigationBarHidden(true)

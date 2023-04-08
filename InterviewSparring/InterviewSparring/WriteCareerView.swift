@@ -19,7 +19,7 @@ struct WriteCareerView: View {
     var body: some View {
         
         ZStack(alignment: .trailing){
-            ProgressView(value: 99)
+            ProgressView(value: 2)
             
             VStack(alignment: .leading, spacing: 32) {
                 VStack(alignment: .leading, spacing: 0) {
@@ -172,12 +172,11 @@ struct ProgressBar: View {
                     .frame(width: 10 , height: geometry.size.height)
                     .foregroundColor(.progressGray)
                 Rectangle()
-                    .frame(width: 10 , height: value)
+                    .frame(width: 10 , height: geometry.size.height / 9 * value)
                     .foregroundColor(.primaryBlue)
                 
             }
         }
-        .frame(height: 20)
     }
 }
 
