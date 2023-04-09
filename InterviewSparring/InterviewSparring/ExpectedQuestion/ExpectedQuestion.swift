@@ -63,57 +63,76 @@ struct RecordStyle: ButtonStyle {
 }
 struct ExpectedQuestion: View {
     @EnvironmentObject var dataManager: DataManager
-    @ObservedObject var openAPIViewModel: OpenAPIViewModel
-    @ObservedObject var speechToTextViewModel: SpeechToTextViewModel
-    
+    @ObservedObject var passedAPIViewModel: OpenAPIViewModel
+    @ObservedObject var openAPIViewModel = OpenAPIViewModel()
+    @ObservedObject var speechToTextViewModel = SpeechToTextViewModel()
+
     @State var isPressed = false
     @State var recordCount = 0 //n번째 녹음
     @State var questionCount = 1 //n번째 질문
     
     @State var isDoneAll = false
+    @State var isViewFullyLoaded = false
     
     var body: some View {
 
         ZStack {
             NavigationLink("", destination: FeedbackView(), isActive: $isDoneAll)
-            if openAPIViewModel.isLoading {
+            if passedAPIViewModel.isLoading {
                 LoadingView()
                     .onDisappear{
-                        dataManager.interviewQuestion = openAPIViewModel.resultTexts
+                        if !isViewFullyLoaded {
+                            dataManager.interviewQuestion = passedAPIViewModel.resultTexts
+                        }
                     }
             }
-            else{
-                VStack (alignment: .center){
-                    QuestionList(isPressed: $isPressed, questionCount: $questionCount, recordCount: $recordCount)
-                    
-                    Button(action : {
-                        isPressed.toggle()
+            else {
+                if openAPIViewModel.isLoading{
+                    SwiftUIView()
+                }
+                else {
+                    VStack (alignment: .center){
+                        QuestionList(isPressed: $isPressed, questionCount: $questionCount, recordCount: $recordCount)
                         
-                        if(isPressed == true){
-                            //녹음 시작
-                            recordCount = recordCount + 1
-                            speechToTextViewModel.startRecording()
-                        }
-                        else{
-                            //녹음 끝
-                            if recordCount == 4 {
-                                isDoneAll.toggle()
-                                questionCount = 4
+                        Button(action : {
+                            isPressed.toggle()
+                            isViewFullyLoaded = true
+                            if(isPressed == true){
+                                //녹음 시작
+                                recordCount = recordCount + 1
+                                speechToTextViewModel.startRecording()
                             }
-                            else {
-                                questionCount = questionCount + 1
+                            else{
+                                speechToTextViewModel.stopRecording()
+                                dataManager.interviewAnswer[recordCount - 1] = speechToTextViewModel.text
+                                openAPIViewModel.questionText.append(dataManager.interviewQuestion[recordCount])
+                                openAPIViewModel.questionText.append("위 면접 질문에 대한 답변은 다음과 같아.")
+                                openAPIViewModel.questionText.append(dataManager.interviewAnswer[recordCount - 1])
+                                openAPIViewModel.submitAnswer()
+                                //녹음 끝
+                                if recordCount == 4 {
+                                    dataManager.interviewAnswer[recordCount - 1] = speechToTextViewModel.text
+                                    openAPIViewModel.questionText.append(dataManager.interviewQuestion[recordCount])
+                                    openAPIViewModel.questionText.append("위 면접 질문에 대한 답변은 다음과 같아.")
+                                    openAPIViewModel.questionText.append(dataManager.interviewAnswer[recordCount - 1])
+                                    openAPIViewModel.submitAnswer()
+                                    isDoneAll.toggle()
+                                    questionCount = 4
+                                }
+                                else {
+                                    questionCount = questionCount + 1
+                                }
                             }
+                            
+                        }){
+                            
                         }
-                       
-                    }){
+                        .buttonStyle(CircleStyle(isPressed: $isPressed))
+                        .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
+                        //            .frame(width: 160, height: 160)
                         
                     }
-                    .buttonStyle(CircleStyle(isPressed: $isPressed))
-                    .padding(EdgeInsets(top: 100, leading: 0, bottom: 100, trailing: 0))
-                    //            .frame(width: 160, height: 160)
-                    
                 }
-                
             }
         }.background(Color.blueBackground)
     }

@@ -13,9 +13,23 @@ struct APIKey: Codable {
     let apiKey: String
 }
 
+class LoadingState: ObservableObject {
+    @Published var isLoading: Bool = false
+
+    func startLoading() {
+        isLoading = true
+    }
+
+    func stopLoading() {
+        isLoading = false
+    }
+}
+
 final class OpenAPIViewModel: ObservableObject {
     @EnvironmentObject var dataManager: DataManager
+    var loadingState = LoadingState()
     @Published var isLoading: Bool = false
+    @Published var isFeedbackLoading: Bool = false
     @Published var resultTexts: [String] = []
     @Published var questionText: String = ""
     
@@ -38,7 +52,7 @@ final class OpenAPIViewModel: ObservableObject {
     }
     
     func submitQuestion() {
-        questionText.append("\n\n이 이력서 내용을 바탕으로 면접 질문 4개를 각 질문별로 세미콜론으로 구분해서 보여줘.")
+        questionText.append("\n\n이 이력서 내용을 바탕으로 면접 질문만 4개를 각 질문별로 세미콜론으로 구분해서 보여줘.")
         
         guard !questionText.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
@@ -51,6 +65,24 @@ final class OpenAPIViewModel: ObservableObject {
                 self.resultTexts = responseTexts
                 self.questionText = ""
                 self.isLoading = false
+            }
+        }
+    }
+    
+    func submitAnswer() {
+        questionText.append("\n\n위 면접 답변은 총 10점 만점에 몇점이고 그에 대한 피드백을 제시해줘")
+        
+        guard !questionText.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        
+        loadingState.startLoading()
+        
+        fetchAnswer(text: questionText) { responseTexts in
+            DispatchQueue.main.async {
+                self.resultTexts = responseTexts
+                self.questionText = ""
+                self.loadingState.stopLoading()
             }
         }
     }
@@ -73,7 +105,7 @@ final class OpenAPIViewModel: ObservableObject {
     }
     
     func fetchAnswer(text: String, completion: @escaping ([String]) -> Void) {
-        apiClient?.sendCompletion(with: text, model: .gpt3(.davinci), maxTokens: 1000, temperature: 1, completionHandler: { result in
+        apiClient?.sendCompletion(with: text, model: .gpt3(.davinci), maxTokens: 1000, temperature: 0.5, completionHandler: { result in
             switch result {
                 case .success(let model):
                     let output = model.choices?.first?.text ?? ""

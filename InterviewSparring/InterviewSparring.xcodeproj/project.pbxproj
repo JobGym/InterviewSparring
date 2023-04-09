@@ -11,6 +11,7 @@
 		20939DED29E13DF500983B9B /* OpenAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */; };
 		20939DEF29E13E1600983B9B /* SpeechToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */; };
 		20939DF129E1519000983B9B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DF029E1519000983B9B /* LoadingView.swift */; };
+		20939DF429E2E07D00983B9B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939DF329E2E07D00983B9B /* SwiftUIView.swift */; };
 		2A0DE1BB29D89F3700E931B4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */; };
 		2AC3A79129E02DD900487FA6 /* JobQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3A79029E02DD900487FA6 /* JobQuestion.swift */; };
 		2AC921B929DC6838005B39FD /* CoverletterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC921B829DC6838005B39FD /* CoverletterView.swift */; };
@@ -52,6 +53,7 @@
 		20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewModel.swift; sourceTree = "<group>"; };
 		20939DF029E1519000983B9B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		20939DF229E1C67700983B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		20939DF329E2E07D00983B9B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		2A0DE1BA29D89F3700E931B4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		2A0DE1CF29D8A61000E931B4 /* ExpectedQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedQuestion.swift; sourceTree = "<group>"; };
 		2AC3A79029E02DD900487FA6 /* JobQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQuestion.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				20939DEC29E13DF500983B9B /* OpenAPIViewModel.swift */,
 				20939DEE29E13E1600983B9B /* SpeechToTextViewModel.swift */,
+				20939DF329E2E07D00983B9B /* SwiftUIView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				F96C47F329E14FEB00A0FC30 /* InterviewSparringApp.swift in Sources */,
 				F96C47F229E14FC100A0FC30 /* QuestionList.swift in Sources */,
+				20939DF429E2E07D00983B9B /* SwiftUIView.swift in Sources */,
 				F96C47F129E14FA100A0FC30 /* ExpectedQuestion.swift in Sources */,
 				F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */,
 				F94795FC29DD7B1A00DD4848 /* WriteLanguageView.swift in Sources */,
@@ -460,7 +464,7 @@
 				CODE_SIGN_ENTITLEMENTS = InterviewSparring/InterviewSparring.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewSparring/Preview Content\"";
 				DEVELOPMENT_TEAM = Y6P5ZFWBM8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -470,7 +474,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -497,7 +501,7 @@
 				CODE_SIGN_ENTITLEMENTS = InterviewSparring/InterviewSparring.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"InterviewSparring/Preview Content\"";
 				DEVELOPMENT_TEAM = Y6P5ZFWBM8;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -507,7 +511,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

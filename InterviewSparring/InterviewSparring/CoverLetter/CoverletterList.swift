@@ -12,6 +12,7 @@ struct CoverletterList: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var dataManager: DataManager
     @ObservedObject var openAPIViewModel = OpenAPIViewModel()
+    @ObservedObject var questionViewModel = OpenAPIViewModel()
     @ObservedObject var speechToTextViewModel = SpeechToTextViewModel()
     
     @State var index = 0
@@ -25,7 +26,7 @@ struct CoverletterList: View {
     
     var body: some View {
         ZStack{
-            NavigationLink("", destination: ExpectedQuestion(openAPIViewModel: openAPIViewModel, speechToTextViewModel: speechToTextViewModel), isActive: $isDoneAll)
+            NavigationLink("", destination: ExpectedQuestion(passedAPIViewModel: openAPIViewModel), isActive: $isDoneAll)
             
             ProgressView(value: 6 + CGFloat(index))
             
