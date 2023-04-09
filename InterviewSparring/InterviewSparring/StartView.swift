@@ -78,6 +78,7 @@ struct StartView: View {
                 }
             }
             .background(Color.blueBackground)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
         
     }

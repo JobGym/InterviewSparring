@@ -34,7 +34,6 @@
 		F9B91C9D29D2EF5B006F5688 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = F9B91C9C29D2EF5B006F5688 /* OpenAISwift */; };
 		F9ED3CC429DC6590008B1473 /* WriteEducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */; };
 		F9ED3CC629DC65BC008B1473 /* DropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */; };
-		F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */; };
 		F9ED3CCA29DC6680008B1473 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */; };
 		F9ED3CCC29DC66E1008B1473 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */; };
 		F9ED3CFF29DC7406008B1473 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */; };
@@ -77,7 +76,6 @@
 		F9B91C9529D2EF05006F5688 /* InterviewSparring.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterviewSparring.entitlements; sourceTree = "<group>"; };
 		F9ED3CC329DC6590008B1473 /* WriteEducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteEducationView.swift; sourceTree = "<group>"; };
 		F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenu.swift; sourceTree = "<group>"; };
-		F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerStyle.swift; sourceTree = "<group>"; };
 		F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
 		F9ED3CCB29DC66E1008B1473 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		F9ED3CFE29DC7406008B1473 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 				F9ED3D0A29DC8347008B1473 /* AddCareerView.swift */,
 				F9ED3CC929DC6680008B1473 /* CustomTextFieldStyle.swift */,
 				F9ED3CC529DC65BC008B1473 /* DropdownMenu.swift */,
-				F9ED3CC729DC6602008B1473 /* CustomDatePickerStyle.swift */,
 				F9ED3D0029DC748C008B1473 /* StartView.swift */,
 				F9ED3D0429DC7686008B1473 /* CustomButtonStyle.swift */,
 				20939DF029E1519000983B9B /* LoadingView.swift */,
@@ -327,7 +324,6 @@
 				F9ED3D0729DC7F3A008B1473 /* EducationHistory.swift in Sources */,
 				F947960229DD930000DD4848 /* Qualification.swift in Sources */,
 				F96C47F529E1511B00A0FC30 /* SummaryResultView.swift in Sources */,
-				F9ED3CC829DC6602008B1473 /* CustomDatePickerStyle.swift in Sources */,
 				F94795FA29DD765400DD4848 /* WriteQualificationView.swift in Sources */,
 				F947960429DD931D00DD4848 /* Language.swift in Sources */,
 				20939DF129E1519000983B9B /* LoadingView.swift in Sources */,
