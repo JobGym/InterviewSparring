@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedbackView: View {
     @EnvironmentObject var dataManager: DataManager
     
-    @State var index = 0
+    @State var index = 1
     @State var screenHeight:CGFloat = 0
     
     @State var isShowSummary = false

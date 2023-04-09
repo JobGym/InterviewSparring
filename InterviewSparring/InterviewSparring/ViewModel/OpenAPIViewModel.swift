@@ -38,7 +38,7 @@ final class OpenAPIViewModel: ObservableObject {
     }
     
     func submitQuestion() {
-        questionText.append("\n\n이 이력서 내용을 바탕으로 '요'자로 끝나는 면접 질문 4개를 각각 세미콜론로 구분해서 대괄호 안에 넣어줘.")
+        questionText.append("\n\n이 이력서 내용을 바탕으로 면접 질문 4개를 각 질문별로 세미콜론으로 구분해서 보여줘.")
         
         guard !questionText.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
@@ -77,25 +77,16 @@ final class OpenAPIViewModel: ObservableObject {
             switch result {
                 case .success(let model):
                     let output = model.choices?.first?.text ?? ""
-                    let pattern = "\\[(.*?)\\]"
-                    let regex = try? NSRegularExpression(pattern: pattern, options: [])
-                    let nsRange = NSRange(output.startIndex..<output.endIndex, in: output)
+                    let substrings = output.split(separator: ";").map { String($0).trimmingCharacters(in: .whitespaces).replacingOccurrences(of: "\n", with: "") }
                     var resultTexts: [String] = [output] // Add the original answer
-                    
-                    regex?.enumerateMatches(in: output, options: [], range: nsRange) { (match, _, _) in
-                        if let matchRange = match?.range(at: 1),
-                           let range = Range(matchRange, in: output) {
-                            let substrings = output[range].split(separator: ";").map { String($0).trimmingCharacters(in: .whitespaces) }
-                            resultTexts.append(contentsOf: substrings)
-                        }
-                    }
-                    
+                    resultTexts.append(contentsOf: substrings)
                     completion(resultTexts)
                 case .failure(let failure):
                     print(failure.localizedDescription)
             }
         })
     }
+
     
     func loadJson(filename: String) -> Data? {
         let extensionType = "json"
